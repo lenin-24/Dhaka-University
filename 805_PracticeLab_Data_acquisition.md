@@ -4,8 +4,9 @@ Example- Samin was smuggling company top secret to Nayeem via pendrive but got c
 brought Lenin a digital Forensics expert to see what types of things he did so without risking of data in usb Lenin made a copy of everything in usb without entering it and 
 did analysis to have proof of Samins bad activities.
 
+NB: Do not insert pendrive and start the write blocker. First start the write blocker than insert pendrive
 
-Step1- download the write blocker 
+Step1- download the write blocker. (((Do not insert pendrive and start the write blocker. First start the write blocker than insert pendrive )))
 (((It is used so that third part cant manipulate data from this device by writing anything or deleting)))
 https://sourceforge.net/projects/usbwriteblockerforwindows8/
 
