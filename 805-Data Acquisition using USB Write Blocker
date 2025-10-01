@@ -1,1 +1,16 @@
-Hello
+This task mainly helps to create a exact copy of the contnets which the imposter had so that the forensics team can analyze 
+the data for any signs of malicious activity (e.g., a hacker’s actions) without touching the original USB.
+Example- Samin was smuggling company top secret to Nayeem via pendrive but got caught by company and now to prove his misdeeds the company 
+brought Lenin a digital Forensics expert to see what types of things he did so without risking of data in usb Lenin made a copy of everything in usb without entering it and 
+did analysis to have proof of Samins bad activities.
+
+
+Step1- download the write blocker 
+(((It is used so that third part cant manipulate data from this device by writing anything or deleting)))
+https://sourceforge.net/projects/usbwriteblockerforwindows8/
+
+Step2- extract and open the main file than write 1 and press enter. it will start the weite blocker.
+
+Step3- Insert the pendrive now 
+(((If you insert the pendrive before activating the write blocker, there’s a risk of unintended write operations (e.g., Windows updating file access timestamps or creating system files).
+This could compromise the forensic validity of the data, as even minor changes can affect hash values and evidence admissibility.)))
