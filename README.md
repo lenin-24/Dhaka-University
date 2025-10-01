@@ -27,7 +27,8 @@ Step6- select the pendrive section
 
 Step7- select destisnation of file save where select E01 and fill up evidence info 
 <img width="561" height="562" alt="select dest" src="https://github.com/user-attachments/assets/97d13372-bfa2-40c8-aa64-af45fb35c8fa" />
-step8- it will take time to process the image.
+
+Step8- it will take time to process the image.
 <img width="482" height="375" alt="process" src="https://github.com/user-attachments/assets/78503f24-6bca-4b15-a50a-cf2d883f0c67" />
 
 Final step- a window of the result will pop up to show required info
