@@ -22,4 +22,4 @@ copy C:\Windows\System32\notepad.exe E:\notepad.exe
 echo Document content > E:\Documents\document.txt
 Create a file specifically < 512 bytes (for resident analysis):
 
-echo Small content here > E:\resident.txt
+echo Small content here > E:\resident.txt 
