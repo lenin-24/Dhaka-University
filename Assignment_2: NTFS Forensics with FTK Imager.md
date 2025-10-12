@@ -45,6 +45,8 @@ echo Small content here > E:\resident.txt
 * Click Add...
 * Select image type: Raw (dd) or E01 (Expert Witness)
 * Browse to save location: [desired place]
+
+
 ![ftk evidence](https://github.com/user-attachments/assets/820e79ec-cc97-4396-9de9-983287e8c300)
 * Give it a name: PenDrive_Evidence
 * Click Start
