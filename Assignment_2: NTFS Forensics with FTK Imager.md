@@ -11,6 +11,9 @@ mkdir E:\Documents
 mkdir E:\Images
 mkdir E:\Data
 
+![make file](https://github.com/user-attachments/assets/668681c4-6f78-458f-9471-bbe335ea1c85)
+
+
 ## Create a small file (< 512 bytes) - RESIDENT FILE
 echo This is a small file with less than 512 bytes of content > E:\small_file.txt
 
@@ -41,9 +44,11 @@ echo Small content here > E:\resident.txt
 * Add destination:
 * Click Add...
 * Select image type: Raw (dd) or E01 (Expert Witness)
-* Browse to save location: C:\Forensics\USB_Image
+* Browse to save location: [desired place]
+![ftk evidence](https://github.com/user-attachments/assets/820e79ec-cc97-4396-9de9-983287e8c300)
 * Give it a name: PenDrive_Evidence
 * Click Start
 * Wait for imaging to complete
 * Verify the image (check hash values)
 
+![image proof](https://github.com/user-attachments/assets/bdd791a8-be7c-4448-aa46-89a8383ae026)
