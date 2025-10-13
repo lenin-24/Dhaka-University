@@ -54,3 +54,62 @@ echo Small content here > E:\resident.txt
 * Verify the image (check hash values)
 
 ![image proof](https://github.com/user-attachments/assets/bdd791a8-be7c-4448-aa46-89a8383ae026)
+
+
+# PHASE 3: Add Evidence and Analysis
+## Step 4: Add Evidence to FTK Imager
+
+Click File → Add Evidence Item
+Select Image File
+Browse to your image: C:\Forensics\USB_Image.001 or .dd
+Click Finish
+The drive will now appear in the Evidence Tree panel.
+![evidence path](https://github.com/user-attachments/assets/3c487f32-c266-48b3-a90c-52b5b3f3eec5)
+
+
+# PHASE 4: Assignment Questions
+a) MFT Entry Analysis (1024 bytes per entry)
+## Step 5: Locate and Export MFT
+
+In FTK Imager Evidence Tree:
+
+Expand your evidence item
+Expand the partition (e.g., NONAME [NTFS])
+Navigate to [root]
+Look for $MFT file
+Export the MFT:
+
+Right-click on $MFT
+Select Export Files
+Save to: C:\Forensics\MFT_Export\
+
+![a2](https://github.com/user-attachments/assets/08118095-69f7-4d7f-b91b-82556369c79d)
+
+## Step 6: Analyze MFT with Hex Editor
+
+Download a hex editor (HxD - free)
+Open the exported $MFT file
+Observe the structure:
+Offset 0x000: 46 49 4C 45 (FILE signature)
+- This marks the start of an MFT entry
+- Each entry is exactly 1024 bytes (0x400)
+
+Offset 0x400: Next FILE signature
+Offset 0x800: Next FILE signature
+...and so on
+![a3 1](https://github.com/user-attachments/assets/e82c15de-828c-4912-b48b-1303ef0e3e58)
+![a3](https://github.com/user-attachments/assets/a7448e48-3e78-4327-be54-2ae6db9209bd)
+
+
+## Documentation for (a):
+
+Take screenshot of hex editor showing:
+FILE signature at offset 0x000
+Next FILE signature at offset 0x400 (1024 bytes later)
+Highlight the 1024-byte span
+
+
+
+
+
+
