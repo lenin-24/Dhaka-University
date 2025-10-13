@@ -178,8 +178,61 @@ Screenshot of MFT entry showing attribute 0x10
 Highlight the 4 timestamp fields (Created, Modified, MFT Modified, Accessed)
 Note the hex values
 Show converted human-readable dates
-Compare with FTK Imager Properties panel
 
 
+# c) Identify Resident File
+## Step 10: Find a Small File (< 512 bytes)
+
+In FTK Imager, look for small_file.txt or resident.txt
+Check file size in Properties - should be < 512 bytes
+Note its MFT entry number = 46 (47104)
+
+![c1](https://github.com/user-attachments/assets/177d5c1f-cef8-42ba-9928-2f82925888ea)
+
+
+## Step 11: Analyze in MFT
+
+Open $MFT in hex editor
+Navigate to the file's MFT entry
+Look for DATA attribute (0x80):
+Search for: 80 00 00 00 (attribute type 0x80)
+Check the attribute header:
+
+Byte at offset +0x08 from attribute start
+If value is 0x00 = RESIDENT
+If value is 0x01 = NON-RESIDENT
+For resident files:
+
+Data is stored RIGHT THERE in the MFT
+You can see the actual file content in hex
+Look for attribute offset and length
+As value is 0x00 = RESIDENT
+
+![c2](https://github.com/user-attachments/assets/dbfd2263-0e30-48ca-8573-26a9d256e3ee)
+
+
+So the bytes 53 6d 61 6c 6c 20 63 6f 6e 74 65 6e 74 20 68 65 72 65 represent:
+👉 "Small content here"
+
+![c3](https://github.com/user-attachments/assets/9659fb4e-fa2f-47e6-99b3-32f5d25cdde0)
+
+
+
+## Step 12: Verify Content
+
+Note the content offset within the attribute
+Read the hex values
+Convert to ASCII to see actual content
+It should match your file content!
+Documentation for (c):
+
+
+
+Screenshot showing the file size < 512 bytes in FTK
+Screenshot of MFT entry in hex editor
+Highlight attribute 0x80 (DATA)
+Show resident flag (0x00)
+Highlight the actual file content stored in MFT
+Convert hex to ASCII and show it matches the file
 
 
