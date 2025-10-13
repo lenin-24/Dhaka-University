@@ -108,7 +108,61 @@ FILE signature at offset 0x000
 Next FILE signature at offset 0x400 (1024 bytes later)
 Highlight the 1024-byte span
 
+# b) Find MAC Times from MFT Metadata
+## Step 7: Select a Specific File
 
+In FTK Imager, select any file (e.g., small_file.txt)
+Note its MFT entry number from the Properties panel(My is 42)
+Look at the "Properties" tab in FTK Imager - it shows timestamps
+
+![mft record no](https://github.com/user-attachments/assets/9f01d521-3742-4832-ac02-20a35f744d3b)
+
+
+## Step 8: Manual MFT Analysis
+
+Open $MFT in hex editor
+
+Calculate entry location:
+
+MFT Entry Offset = Entry Number × 1024
+offset=42*1024=43008, HEX= 0xA800
+
+Navigate to that offset
+
+Find Standard Information attribute (0xA800):
+
+![Standard Information](https://github.com/user-attachments/assets/2a9eb09b-8312-4f39-b481-e136be11727b)
+
+
+Look for: 46 49 4C 45 .. (attribute type 0xA800)
+You look for 46 49 4C 45 because it’s the magic signature that marks the start of every valid MFT entry in NTFS.
+
+After attribute header, you'll find timestamps:
+Offset from attribute start:
++0x00 to +0x07: Created Time (8 bytes)
++0x08 to +0x0F: Modified Time (8 bytes)
++0x10 to +0x17: MFT Modified Time (8 bytes)
++0x18 to +0x1F: Accessed Time (8 bytes)
+Timestamps are in Windows FILETIME format:
+
+64-bit value
+Number of 100-nanosecond intervals since Jan 1, 1601
+## Step 9: Convert Timestamp 
+
+Use online converter or PowerShell:
+
+
+
+# Convert FILETIME to readable date
+[DateTime]::FromFileTime(0x01D7F5B5C6A8B000)
+
+## Documentation for (b):
+
+Screenshot of MFT entry showing attribute 0x10
+Highlight the 4 timestamp fields (Created, Modified, MFT Modified, Accessed)
+Note the hex values
+Show converted human-readable dates
+Compare with FTK Imager Properties panel
 
 
 
