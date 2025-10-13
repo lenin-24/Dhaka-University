@@ -235,4 +235,71 @@ Show resident flag (0x00)
 Highlight the actual file content stored in MFT
 Convert hex to ASCII and show it matches the file
 
+# d) Data Runs for Non-Resident Files
+## Step 13: Select a Large File
 
+In FTK Imager, select large_file.dat or notepad.exe
+Check size > 512 bytes= 10240
+Note MFT entry number= 43 (44032)
+43 × 1024 = 44,032 (0xAC00) 
+
+in 0xad10  DATA attribute value is 01 so non-resident
+
+## Step 14: Find Data Run Information
+
+Open $MFT in hex editor
+Navigate to file's MFT entry
+Find DATA attribute (0x80)
+Check non-resident flag (0x01)
+Locate the data run field
+Data Run Structure:
+
+Example: 31 05 B2 34 12
+
+Breaking it down:
+- 31: Header byte
+  - 3 = number of bytes for cluster offset (high nibble)
+  - 1 = number of bytes for cluster length (low nibble)
+  
+- 05: Length (1 byte) = 5 clusters
+  
+- B2 34 12: Offset (3 bytes) = cluster location
+## Step 15: Calculate Actual Location
+
+Given data run: 31 05 B2 34 12
+
+1. Length: 05 = 5 clusters
+
+2. Offset: B2 34 12 (little-endian)
+   = 0x1234B2 clusters from start
+   
+3. Cluster size (check in FTK or partition info): Usually 4096 bytes
+
+4. Actual byte location:
+   Byte Offset = 0x1234B2 × 4096
+   = 1,193,394 × 4096
+   = 4,888,887,296 bytes
+   = ~4.88 GB into the drive
+
+5. Length in bytes:
+   5 clusters × 4096 = 20,480 bytes
+## Step 16: Verify in FTK Imager
+
+In FTK Imager, select the file
+Look at the hex view
+Note the starting sector/cluster
+Compare with your calculation
+Alternative: Use FTK's Properties
+
+FTK shows physical location in Properties panel
+Compare with manual calculation
+Documentation for (d):
+
+Screenshot of large file in FTK (> 512 bytes)
+Screenshot of MFT entry showing attribute 0x80
+Highlight non-resident flag (0x01)
+Show data run bytes in hex
+Write out the calculation:
+Data Run: [hex bytes]Header: X|YLength: X clustersOffset: Y bytes = cluster numberCluster Size: 4096 bytesPhysical Location = Offset × Cluster Size                  = [calculation]                  = [result] bytes from partition start
+Screenshot from FTK Properties showing physical sectors
+Verify calculation matches FTK's reported location
