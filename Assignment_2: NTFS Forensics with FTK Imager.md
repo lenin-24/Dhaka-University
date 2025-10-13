@@ -242,6 +242,7 @@ In FTK Imager, select large_file.dat or notepad.exe
 Check size > 512 bytes= 10240
 Note MFT entry number= 43 (44032)
 43 × 1024 = 44,032 (0xAC00) 
+![d1](https://github.com/user-attachments/assets/30fe3c6b-4211-49df-bb12-b527135fa354)
 
 in 0xad10  DATA attribute value is 01 so non-resident
 
@@ -252,6 +253,11 @@ Navigate to file's MFT entry
 Find DATA attribute (0x80)
 Check non-resident flag (0x01)
 Locate the data run field
+
+
+![d2](https://github.com/user-attachments/assets/b2766bc7-2140-41e7-bd2e-f27c1c738d67)
+
+
 Data Run Structure:
 
 Example: 31 05 B2 34 12
