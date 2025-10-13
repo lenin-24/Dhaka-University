@@ -127,11 +127,14 @@ Calculate entry location:
 MFT Entry Offset = Entry Number × 1024
 offset=42*1024=43008, HEX= 0xA800
 
+
 Navigate to that offset
 
 Find Standard Information attribute (0xA800):
 
-![Standard Information](https://github.com/user-attachments/assets/2a9eb09b-8312-4f39-b481-e136be11727b)
+
+![standard time](https://github.com/user-attachments/assets/1282fda1-9481-4129-ab0e-afe19b3ae823)
+
 
 
 Look for: 46 49 4C 45 .. (attribute type 0xA800)
@@ -151,7 +154,20 @@ Number of 100-nanosecond intervals since Jan 1, 1601
 
 Use online converter or PowerShell:
 
+![time](https://github.com/user-attachments/assets/ea1e17ea-89d2-4cb0-8658-7ceaaa86a1ba)
 
+1️⃣ Created
+[DateTime]::FromFileTime(0x01DC3B985F301B9F)
+
+✅ Result: Monday, October 13, 2025 21:50:14 UTC
+(≈ 10:50:14 PM UTC+6 → Bangladesh time)
+
+2️⃣ Modified
+[DateTime]::FromFileTime(0x01DC3B985F3031B5)
+
+
+✅ Result: Monday, October 13, 2025 21:50:15 UTC
+(≈ 10:50:15 PM UTC+6 → Bangladesh time)
 
 # Convert FILETIME to readable date
 [DateTime]::FromFileTime(0x01D7F5B5C6A8B000)
