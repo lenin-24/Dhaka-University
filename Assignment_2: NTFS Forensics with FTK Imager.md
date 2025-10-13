@@ -257,6 +257,78 @@ Locate the data run field
 
 ![d2](https://github.com/user-attachments/assets/b2766bc7-2140-41e7-bd2e-f27c1c738d67)
 
+$DATA Attribute Start: 0x0000ad10
+0x0000ad10 + 0x08 = 0x0000ad18
+→ You confirmed it’s 01 → non-resident ✅
+
+Data runs offset = 0x0040 (little-endian of 40 00) → 64 bytes
+So, data runs begin at:
+0x0000ad10 + 0x40 = 0x0000ad50
+it is 21 03 89 15 00 00 00 00 ff ff ff ff 82 79 47 11
+
+Step 4: Calculate Physical Location 
+
+From FTK Imager (or standard NTFS USB format), the cluster size is almost certainly 4096 bytes. 
+
+    Physical Byte Offset = Cluster Offset × Cluster Size
+    = 5,513 × 4,096
+    = 22,581,248 bytes from the start of the partition. 
+     
+
+File Size on Disk: 
+
+    = Run Length × Cluster Size
+    = 3 × 4,096
+    = 12,288 bytes 
+     
+
+(Your file is 10,240 bytes, so it uses 12,288 bytes on disk — normal due to cluster rounding.) 
+
+1. Header Byte: 21 
+
+    High nibble (2) = 2 bytes for cluster offset
+    Low nibble (1) = 1 byte for run length
+     
+
+2. Run Length: 03 
+
+    Length = 0x03 = 3 clusters
+     
+
+3. Cluster Offset: 89 15 
+
+    This is in little-endian format → reverse the bytes: 15 89
+    Convert to hex: 0x1589
+    Convert to decimal:
+    0x1589 = (1 × 4096) + (5 × 256) + (8 × 16) + 9 = 4096 + 1280 + 128 + 9 = **5,513**
+     
+
+✅ So the file data starts at cluster 5,513 from the beginning of the partition’s data area. 
+
+Final Answer for Your Report (Section d) 
+
+    File: large_file.dat
+    MFT Entry: #43
+    $DATA Attribute Start: 0x0000ad10
+    Data Runs Offset Field: 40 00 → 64 bytes
+    Data Runs Start: 0x0000ad50
+    Data Run Bytes: 21 03 89 15   
+
+    Decoding:   
+
+        Header: 21 → 2 bytes for offset, 1 byte for length  
+        Length: 03 → 3 clusters  
+        Offset: 89 15 → little-endian = 0x1589 = 5,513 clusters  
+        Cluster Size: 4,096 bytes  
+        Physical Offset = 5,513 × 4,096 = 22,581,248 bytes from partition start  
+        File Size on Disk = 3 × 4,096 = 12,288 bytes
+         
+
+
+
+===============================================================================     
+
+
 
 Data Run Structure:
 
