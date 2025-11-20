@@ -85,3 +85,22 @@ Alternative method:
 
 Check "OS Account" in the left panel
 Or search for "RegisteredOwner" in keyword search
+
+Question 5: Computer Name
+
+Steps:
+
+Go to registry analysis of config file of system32
+Navigate to: SYSTEM registry hive
+Look at: SYSTEM\ControlSet001\Control\ComputerName\ComputerName\ComputerName
+
+there is the ans
+
+Question 6: Which user has "Good Bye Blue Sky.txt"?
+
+Steps:
+
+Use "File Search" feature
+In the search box at top right, type: Good Bye Blue Sky.txt
+Look at the file path to determine which user directory it's in
+The path will be: C:\Users\[USERNAME]\...
