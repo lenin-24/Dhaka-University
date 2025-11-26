@@ -1,3 +1,7 @@
+Extra
+1. to see if that account is deactivated or not
+   
+
 # Step-by-Step Digital Forensics Investigation Using Autopsy
 
 ## Phase 1: Setting Up the Case in Autopsy
