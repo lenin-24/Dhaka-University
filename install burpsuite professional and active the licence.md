@@ -1,13 +1,72 @@
-Windows Installation 
-Make a Burp directory name in C Drive for faster access.
+Here is a clean, GitHub-ready **Markdown** version of your Burp Suite installation instructions:
 
-Download install.ps1 (https://codeload.github.com/xiv3r/Burpsuite-Professional/zip/refs/heads/main) and extract move the file inside to C:\Burp
+```markdown
+# 🪟 Windows Installation Guide for Burp Suite
 
-Open Powershell as administrator and execute below command to set Script Execution Policy.
+## 📁 Step 1: Create Burp Directory
+Create a directory named **Burp** in your `C:` drive for faster access.
 
+```
+
+C:\Burp
+
+```
+
+---
+
+## 📥 Step 2: Download Installation Script
+
+Download the repository ZIP from the link below and extract it:
+
+**Download:**  
+https://codeload.github.com/xiv3r/Burpsuite-Professional/zip/refs/heads/main
+
+After extracting, move the `install.ps1` file into:
+
+```
+
+C:\Burp
+
+````
+
+---
+
+## 🛡️ Step 3: Open PowerShell as Administrator
+
+1. Press **Win + X**
+2. Select **Windows PowerShell (Admin)**
+
+Run the following command to temporarily bypass execution policy:
+
+```powershell
 Set-ExecutionPolicy -ExecutionPolicy bypass -Scope process
-Inside PowerShell go to cd C:\Burp
+````
 
-Now Execute install.ps1 file in Powershell to Complete Installation.
+---
 
+## 📂 Step 4: Navigate to Burp Folder
+
+```powershell
+cd C:\Burp
+```
+
+---
+
+## ▶️ Step 5: Run Installation Script
+
+Execute the installer:
+
+```powershell
 ./install.ps1
+```
+
+---
+
+## ✅ Installation Complete
+
+Burp Suite should now be installed successfully on your Windows system.
+
+```
+
+Let me know if you want a **README.md** file generated directly!
+```
