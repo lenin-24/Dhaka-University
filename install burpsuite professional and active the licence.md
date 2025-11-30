@@ -1,4 +1,4 @@
-Here is a clean, GitHub-ready **Markdown** version of your Burp Suite installation instructions:
+
 
 ```markdown
 # 🪟 Windows Installation Guide for Burp Suite
@@ -68,5 +68,4 @@ Burp Suite should now be installed successfully on your Windows system.
 
 ```
 
-Let me know if you want a **README.md** file generated directly!
-```
+
