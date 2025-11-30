@@ -38,7 +38,7 @@ C:\Burp
 
 Run the following command to temporarily bypass execution policy:
 
-```powershell
+```in powershell type
 Set-ExecutionPolicy -ExecutionPolicy bypass -Scope process
 ````
 
@@ -56,11 +56,14 @@ cd C:\Burp
 
 Execute the installer:
 
-```powershell
+```than in write in powershell
 ./install.ps1
 ```
 
 ---
+
+## Step 6: Than to active the lcience follow this video
+https://www.youtube.com/watch?v=7PyN6nyIdyY
 
 ## ✅ Installation Complete
 
