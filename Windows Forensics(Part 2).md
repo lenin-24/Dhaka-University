@@ -1,52 +1,61 @@
-## 1. Computer Name=
-# Go to: Data Sources → Volume → Windows → System32 → config → System
-than go to hive where ControlSet001->Control- ComputerName there it is
+# Windows Forensic Data Locations
 
-## 2. Time Zone info
-# Go to: Data Sources → Volume → Windows → System32 → config → System
-than go to hive where ControlSet001->Control- TimeZoneInformation there it is
+## 1. Computer Name
+- Go to: `Data Sources → Volume → Windows → System32 → config → System`
+- Navigate to hive: `ControlSet001 → Control → ComputerName`
+- The computer name is located here.
+
+## 2. Time Zone Info
+- Go to: `Data Sources → Volume → Windows → System32 → config → System`
+- Navigate to hive: `ControlSet001 → Control → TimeZoneInformation`
+- Time zone details are stored here.
 
 ## 3. IP Address
-# Go to: Data Sources → Volume → Windows → System32 → config → System
-than go to hive where ControlSet001->Services-> Tcpip - parameters-interfaces- than 2nd folder select korle ans dakhabe there it is
+- Go to: `Data Sources → Volume → Windows → System32 → config → System`
+- Navigate to hive: `ControlSet001 → Services → Tcpip → Parameters → Interfaces`
+- Select the **second folder** (typically the active interface) to find the IP address.
 
-## 4. Find out the mounted device "King Stone"? 
-# Go to: Data Sources → Volume → Windows → System32 → config → System
-than go to hive where Mounted Devices where \DosDevices\M: where mark 0x20 & 0x30
+## 4. Find the Mounted Device "King Stone"
+- Go to: `Data Sources → Volume → Windows → System32 → config → System`
+- Navigate to hive: `MountedDevices`
+- Look for the entry `\DosDevices\M:`
+- Check the binary data at offsets `0x20` and `0x30` for the identifier "King Stone".
 
-## 5. Current version of the windows?  
-# Go to: Data Artifacts → Operating System Info 
+## 5. Current Version of Windows
+- Go to: `Data Artifacts → Operating System Info`
 
-## 6.Find out the installation Date in UTC? (dd/mm/yyyy)
-# Go to: Data Sources → Volume → Windows → System32 → config → Software
-than go to hive where microsoft -> Windows NT -> Current Version click you will see isntall date
+## 6. Installation Date in UTC (dd/mm/yyyy)
+- Go to: `Data Sources → Volume → Windows → System32 → config → Software`
+- Navigate to hive: `Microsoft → Windows NT → CurrentVersion`
+- The `InstallDate` value shows the installation timestamp (convert from Unix epoch to UTC).
 
-## 7.  BillyBob user account creation date
-# Go to: Data Sources → Volume → Windows → System32 → config → SAM
-than go to hive where Sam - Domains - Account- Users - Names - Billybob 
-## 8. Who created "Joe T. Nameless" this user account?
-# Go to: Data Sources → Volume → Windows → System32 -> winevt -> logs 
-than click in	Security.evtx than right click in " Open in External viewer"
-than in that viewer select "Filter current log" than in Event id write 4720 
-than find Account Name:		Sgt. Joe T. Nameless than select it than you will see "event properties" in the right side click it and you get answer
+## 7. BillyBob User Account Creation Date
+- Go to: `Data Sources → Volume → Windows → System32 → config → SAM`
+- Navigate to hive: `SAM → Domains → Account → Users → Names → BillyBob`
 
-## 9. BillyBob last login time?
-# Go to: Data Sources → Volume → Windows → System32 -> winevt -> logs 
-than click in	Security.evtx than right click in " Open in External viewer"
-than in that viewer select "Filter current log" than in Event id write 4624
-and top e jeta thakbe oitai latest click it and oita than you will see "event properties" in the right side click it and you get answer
+## 8. Who Created the User Account "Joe T. Nameless"?
+- Go to: `Data Sources → Volume → Windows → System32 → winevt → logs`
+- Open: `Security.evtx`
+- Right-click → **Open in External Viewer**
+- In the viewer:
+  - Filter current log: **Event ID = 4720**
+  - Locate the event with `Account Name: Sgt. Joe T. Nameless`
+  - Check **Event Properties** (right sidebar) to identify the creator.
 
-## 10. Did BillyBob successfully reset password of the other user?
-# Go to: Data Sources → Volume → Windows → System32 -> winevt -> logs 
-than click in	Security.evtx than right click in " Open in External viewer"
-than in that viewer select "Filter current log" than in Event id write 4724
-and top e jeta thakbe oitai latest click it and oita than you will see "event properties" in the right side click it and you get answer
+## 9. BillyBob Last Login Time
+- Go to: `Data Sources → Volume → Windows → System32 → winevt → logs`
+- Open: `Security.evtx`
+- Right-click → **Open in External Viewer**
+- In the viewer:
+  - Filter current log: **Event ID = 4624**
+  - The **topmost (most recent)** event for BillyBob shows the latest successful login.
+  - View **Event Properties** for the exact timestamp.
 
-
-
-
-
-
-
-
-
+## 10. Did BillyBob Successfully Reset Another User's Password?
+- Go to: `Data Sources → Volume → Windows → System32 → winevt → logs`
+- Open: `Security.evtx`
+- Right-click → **Open in External Viewer**
+- In the viewer:
+  - Filter current log: **Event ID = 4724**
+  - Review events to see if BillyBob performed a password reset.
+  - Check **Event Properties** for confirmation and target user details.
