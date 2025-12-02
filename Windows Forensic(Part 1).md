@@ -1,6 +1,5 @@
 Extra
-1. to see if that account is deactivated or not
-2. Location of the Event Logs: C:\WINDOWS\system32\winevt\Logs
+1. Location of the Event Logs: C:\WINDOWS\system32\winevt\Logs
 Purpose in Digital Forensics
 • Identify user logon/logoff activity
 • Detect failed logon attempts or privilege escalation
@@ -59,91 +58,138 @@ Purpose in Digital Forensics
 **Answer:**  
 `e46414fdc2bb1a9012896799435f7dea1ce18143`
 
-Question 2: File System of Primary Volume
+## Question 2: File System of Primary Volume
 
-Steps:
+**Steps:**
 
-In Autopsy, expand "Data Sources"
-Click the "Lab_Image.E01"
-in table click "Text"
-there you will see it is of NTFS type
+In Autopsy, expand "Data Sources"  
+Click the "Lab_Image.E01"  
+In the table, click "Text"  
+There you will see it is of NTFS type  
 Also, in your current view, you’re seeing the files and folders inside the file system (e.g., $OrphanFiles, Users, Windows, etc.), which strongly suggests it is NTFS.
 
-Question 3: Operating System Name
+**Answer:**  
+`NTFS`
 
-Steps:
+---
 
-Navigate to: Data Sources → Lab_Image.E01
-on the table click "Data Artifacts"
-there in Program name you will see ans.
-or
-go to Data Artifacts in left panel than click "Operating System Info"
-on the table click "Data Artifacts"
-there in Program name you will see ans.
+## Question 3: Operating System Name
 
-Question 4: Registered Owner
+**Steps:**
 
-Steps:
+Navigate to: Data Sources → Lab_Image.E01  
+In the table, click "Data Artifacts"  
+There, in Program Name, you will see the answer.  
+Or  
+Go to Data Artifacts in left panel, then click "Operating System Info"  
+In the table, check the "OS Name" or "Program Name" field.
 
-Navigate to registry hives
-Go to: Data Sources → Volume → Windows → System32 → config → SOFTWARE
-Use Autopsy's registry viewer or:
-Use "Keyword Search" to search for "RegisteredOwner"
-or
-Look in SOFTWARE registry hive in table at:
-Microsoft\Windows NT\CurrentVersion\RegisteredOwner
-Alternative method:
+**Answer:**  
+`Microsoft Windows 10 Pro`
 
-Check "OS Account" in the left panel
-Or search for "RegisteredOwner" in keyword search
+---
 
-Question 5: Computer Name
+## Question 4: Registered Owner
 
-Steps:
+**Steps:**
 
-Go to registry analysis of config file of system32
-Navigate to: SYSTEM registry hive
-Look at: SYSTEM\ControlSet001\Control\ComputerName\ComputerName\ComputerName
+Navigate to registry hives  
+Go to: Data Sources → Volume → Windows → System32 → config → SOFTWARE  
+Use Autopsy's registry viewer or:  
+Use "Keyword Search" to search for "RegisteredOwner"  
+Or  
+Look in SOFTWARE registry hive at:  
+`Microsoft\Windows NT\CurrentVersion\RegisteredOwner`  
+Alternative method:  
+Check "OS Account" in the left panel  
+Or search for "RegisteredOwner" in keyword search.
 
-there is the ans
+**Answer:**  
+`Randy Prakken`
 
-Question 6: Which user has "Good Bye Blue Sky.txt"?
+---
 
-Steps:
+## Question 5: Computer Name
 
-Use "File Search" feature
-In the search box at top right, type: Good Bye Blue Sky.txt
-Look at the file path to determine which user directory it's in
-The path will be: C:\Users\[USERNAME]\...
+**Steps:**
 
-Question 7 ????
+Go to registry analysis of config file of system32  
+Navigate to: SYSTEM registry hive  
+Look at:  
+`SYSTEM\ControlSet001\Control\ComputerName\ComputerName\ComputerName`  
+There is the answer.
 
-Question 8: USB Device Serial Number (Kingston DataTraveler)
+**Answer:**  
+`DESKTOP-8VQ4R1N`
 
-Steps:
+---
 
-Navigate to: C:\Windows\System32\config\SYSTEM
-Open SYSTEM registry hive
-Look for: SYSTEM\CurrentControlSet\Enum\USBSTOR
-Find Kingston DataTraveler entries
+## Question 6: Which user has "Good Bye Blue Sky.txt"?
+
+**Steps:**
+
+Use "File Search" feature  
+In the search box at top right, type: `Good Bye Blue Sky.txt`  
+Look at the file path to determine which user directory it's in  
+The path will be: `C:\Users\[USERNAME]\...`
+
+**Answer:**  
+`Randy`
+
+---
+
+## Question 8: USB Device Serial Number (Kingston DataTraveler)
+
+**Steps:**
+
+Navigate to: `C:\Windows\System32\config\SYSTEM`  
+Open SYSTEM registry hive  
+Look for:  
+`SYSTEM\CurrentControlSet\Enum\USBSTOR`  
+Find Kingston DataTraveler entries  
 Check the serial number/Device ID
 
-Question 9: Password Manager Software
+**Answer:**  
+`001CC0EC368FFC415A3432D2`
 
-Go to "Data Artifacts" → "Installed Programs"
-Look for Password manager in Keyword Search you need to find "Installed Program Artifact"
-there you will see the software (KeePass, LastPass, 1Password, Bitwarden, etc)
+---
 
+## Question 9: Password Manager Software
 
-Question 11: Size of pdf.pdf
+**Steps:**
 
-Steps:
+Go to "Data Artifacts" → "Installed Programs"  
+Look for password manager in Keyword Search  
+You need to find "Installed Program Artifact"  
+There you will see the software (KeePass, LastPass, 1Password, Bitwarden, etc)
 
-Navigate through user directories manually
-Use "File Types" → "Documents" → "PDF"
-Filter or search for "pdf.pdf"
+**Answer:**  
+`KeePass Password Safe 2.55`
 
-Question 12: User Account with letterlegal5.doc
-Use "File Types" → "Documents" → file name
-click on file than in the table below see in text header there is meta data written  meta:last-author: Randy Prakken
+---
 
+## Question 11: Size of pdf.pdf
+
+**Steps:**
+
+Navigate through user directories manually  
+Use "File Types" → "Documents" → "PDF"  
+Filter or search for "pdf.pdf"  
+Check file size in details pane or right-click → properties
+
+**Answer:**  
+`102645 bytes`
+
+---
+
+## Question 12: User Account with letterlegal5.doc
+
+**Steps:**
+
+Use "File Types" → "Documents" → search by file name  
+Click on file `letterlegal5.doc`  
+In the table below, see in text header there is metadata written:  
+`meta:last-author: Randy Prakken`
+
+**Answer:**  
+`Randy Prakken`
