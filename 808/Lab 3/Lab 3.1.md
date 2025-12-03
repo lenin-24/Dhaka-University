@@ -1,4 +1,4 @@
-✅ WHAT YOU NEED TO DO IN THE LAB (Step-by-Step)
+# ✅ WHAT YOU NEED TO DO IN THE LAB
 
 Lab focuses on the CIA Triad, but in this manual you will perform tasks only for the Confidentiality pillar.
 
