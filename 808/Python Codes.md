@@ -22,8 +22,9 @@ x, y, z = 9, 5, "abc"
 
 ## python data types
 
-```python
+
 ### bool
+
 x = True
 ### list
 x = [1,2,3,4,5.7, "abc"]
