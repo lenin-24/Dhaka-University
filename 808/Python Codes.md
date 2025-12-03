@@ -68,7 +68,7 @@ print(type(s))
 x = 1
 print(x)
 print(type(x))
-y = int(s) # str to int
+y = int(s)      # str to int
 print(y)
 print(type(y))
 z = x + y
@@ -76,29 +76,29 @@ print(z)
 
 x = 11234.2345345
 print(type(x))
-y = int(x) # float to int
+y = int(x)      # float to int
 print(y)
 print(type(y))
 
 s = "123.455"
 print(type(s))
-x = float(s) # str to float
+x = float(s)    # str to float
 print(x)
 print(type(x))
 print(x +4)
 
 s = "3"
-x = float(s) # str to float
+x = float(s)    # str to float
 print(x)
 print(type(x))
 
 y = 3
-x = float(y) # int to float
+x = float(y)    # int to float
 print(x)
 print(type(x))
 
 y = 3
-s = str(y) # int to str
+s = str(y)      # int to str
 print(s)
 print(type(s))
 ```
