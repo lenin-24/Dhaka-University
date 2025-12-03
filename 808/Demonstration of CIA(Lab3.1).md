@@ -1,3 +1,14 @@
+Below is a **simple, clear explanation** of **exactly what you need to do in this lab**, step-by-step, based on the PDF you uploaded.
+(Everything is from your file: **Lab 03 – Practical Demonstration of CIA – Confidentiality**.)
+
+---
+
+# ✅ **WHAT YOU NEED TO DO IN THE LAB (Step-by-Step)**
+
+Your lab focuses on the **CIA Triad**, but in this manual you will perform tasks only for the **Confidentiality pillar**.
+
+You will perform **3 main tasks**:
+
 ---
 
 # **🔵 PART 1 — Data Encoding & Decoding (Base64 and Hex)**
@@ -121,4 +132,21 @@ No commands required in this lab.
 
 ---
 
+# ✅ **SUMMARY — WHAT YOU MUST DO**
 
+| Task                      | What You Do                 | Commands                            |
+| ------------------------- | --------------------------- | ----------------------------------- |
+| **Encoding**              | Base64 & Hex                | `base64`, `xxd`                     |
+| **Symmetric Encryption**  | AES encrypt + decrypt       | `openssl enc`                       |
+| **Asymmetric Encryption** | RSA key + encrypt + decrypt | `openssl genrsa`, `openssl pkeyutl` |
+| **Hashing**               | Understand only             | No commands                         |
+
+---
+
+# If you want, I can also make:
+
+✅ a **checklist to follow during your lab**
+✅ a **cheat sheet** with all commands in one place
+✅ explain **why we used pkeyutl** (from your earlier confusion)
+
+Just tell me.
