@@ -1,12 +1,4 @@
-Extra
-1. Location of the Event Logs: C:\WINDOWS\system32\winevt\Logs
-Purpose in Digital Forensics
-• Identify user logon/logoff activity
-• Detect failed logon attempts or privilege escalation
-• Track software installation or system crashes
-• Correlate timestamps across other artifacts
-• Detect log clearing or tampering (anti-forensic behavior)
-   
+
 
 # Step-by-Step Digital Forensics Investigation Using Autopsy
 
@@ -193,3 +185,14 @@ In the table below, see in text header there is metadata written:
 
 **Answer:**  
 `Randy Prakken`
+
+
+### Extra
+1. Location of the Event Logs: C:\WINDOWS\system32\winevt\Logs
+Purpose in Digital Forensics
+• Identify user logon/logoff activity
+• Detect failed logon attempts or privilege escalation
+• Track software installation or system crashes
+• Correlate timestamps across other artifacts
+• Detect log clearing or tampering (anti-forensic behavior)
+   
