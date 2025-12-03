@@ -1,15 +1,5 @@
 ## Assigning int, string, float
 
-x = 9 # int
-print(x)
-print(type(x))
 
-x = "abc" # string
-print(x)
-print(type(x))
-
-x = 45.12 # float
-print(x)
-print(type(x))
 
 
