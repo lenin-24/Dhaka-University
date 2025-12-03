@@ -1,6 +1,4 @@
----
 
----
 
 # **🔵 PART 1 — Data Encoding & Decoding (Base64 and Hex)**
 
