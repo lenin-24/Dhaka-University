@@ -213,7 +213,7 @@ print(s1.isdigit())
 print(s2.isdigit())
 ```
 
-## If Statement
+### If Statement
 
 ```
 # if else
@@ -254,7 +254,7 @@ print(list(range(10)))
 print(list(range(0,10)))
 ```
 
-## Loop
+### Loop
 ```
 # for loop
 for i in range(4):
@@ -266,14 +266,14 @@ for i in range(4,10):
 print()
 ```
 
-# iterating a list
+### iterating a list
 ```
 L = ["a", "b", "c"]
 
 for i in L:
 	print(i)
 ```
-# iterating dictionary keys
+### iterating dictionary keys
 ```
 d = {"a": 1, "b": 2, "c": 3}
 
@@ -281,10 +281,49 @@ for i in d:
 	print(i)
 ```
 
-# iterating dictionary keys and values
+### iterating dictionary keys and values
 ```
 d = {"a": 1, "b": 2, "c": 3}
 
 for i in d:
 	print(i, d[i])
 ```
+
+
+# Symmetric Encryption with Fernet (cryptography)
+
+Demonstrates how to encrypt and decrypt data using the `Fernet` symmetric encryption scheme from the `cryptography` library.
+
+> 🔐 **Note**: The key must be kept secret and stored securely. Never hardcode it in production code.
+
+```python
+from cryptography.fernet import Fernet
+
+# 1. Generate a key (do this once and store it securely)
+key = Fernet.generate_key()
+print(f"Encryption Key: {key.decode()}")
+
+# 2. Create cipher
+cipher = Fernet(key)
+
+# 3. Encrypt a message
+plaintext = "SensitiveData123"
+ciphertext = cipher.encrypt(plaintext.encode())
+print(f"Encrypted: {ciphertext.decode()}")
+
+# 4. Decrypt the message
+decrypted = cipher.decrypt(ciphertext).decode()
+print(f"Decrypted: {decrypted}")
+```
+
+## Expected Output (example):
+```
+Encryption Key: 5j6x8Kl2mN0pQrStUvWxYzAbCdEfGhIjKlMnOpQrStUvWxYz1234567890ABCD
+Encrypted: gAAAAABk... (long base64 string)
+Decrypted: SensitiveData123
+```
+
+> 💡 **Installation**: If you don't have the `cryptography` library, install it via:  
+> ```bash
+> pip install cryptography
+> ```
