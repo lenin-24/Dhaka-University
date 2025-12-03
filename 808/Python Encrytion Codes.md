@@ -301,7 +301,7 @@ conn.close()
 
 > 💡 The `:memory:` database is temporary and vanishes when the connection closes — useful for testing, not for persistent storage.
 
-## Create a new Student table with fields: id, name, roll, password, salt. Take name, roll, and password as input from the console. Then hash the password after adding salt, save the hashed password and salt.
+## <font color="#28a745">Create a new Student table with fields: id, name, roll, password, salt. Take name, roll, and password as input from the console. Then hash the password after adding salt, save the hashed password and salt.</font>
 
 # Secure Student Registration with Salted Password Hashing
 
