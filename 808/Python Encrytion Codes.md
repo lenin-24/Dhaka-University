@@ -246,8 +246,8 @@ conn.close()
 
 > ✅ **No external dependencies**: The `sqlite3` module is part of Python’s standard library.
 
-## Simulate a student login system. Your task is to: Create a table students with fields: id, name, roll, password. Insert at least 3 students.
-# SQLite Example: Vulnerable Students Table (In-Memory)
+# Simulate a student login system. Your task is to: Create a table students with fields: id, name, roll, password. Insert at least 3 students.
+## SQLite Example: Vulnerable Students Table (In-Memory)
 
 Creates an in-memory SQLite database with a `students` table that stores plaintext passwords — illustrating a **common security anti-pattern**.
 
@@ -301,10 +301,10 @@ conn.close()
 
 > 💡 The `:memory:` database is temporary and vanishes when the connection closes — useful for testing, not for persistent storage.
 
-## Create a new Student table with fields: id, name, roll, password, salt. Take name, roll, and password as input from the console. Then hash the password after adding salt, save the hashed password and salt.
+# Create a new Student table with fields: id, name, roll, password, salt. Take name, roll, and password as input from the console. Then hash the password after adding salt, save the hashed password and salt.
 
 
-# Secure Student Registration with Salted Password Hashing
+## Secure Student Registration with Salted Password Hashing
 
 Demonstrates how to securely store user passwords in an SQLite database using **unique random salts** and SHA-256 hashing.
 
@@ -403,10 +403,10 @@ Salt: a1b2c3... (different salt)
 
 > 📌 **Note**: This example uses an in-memory database (`:memory:`). To persist data, replace `":memory:"` with `"students.db"`.
 
-## Take the roll and password of a student from input. Now if the ceredentials is correct, print sucessful login. Otherwise, print an error message. If possible, perform the login using a function.
+# Take the roll and password of a student from input. Now if the ceredentials is correct, print sucessful login. Otherwise, print an error message. If possible, perform the login using a function.
 
 
-# Secure Storage + Intentionally Vulnerable Login (SQL Injection Demo)
+## Secure Storage + Intentionally Vulnerable Login (SQL Injection Demo)
 
 This script demonstrates:
 1. ✅ **Secure password storage** using unique random salts and SHA-256 hashing.
