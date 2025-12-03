@@ -146,3 +146,162 @@ print("Encryption complete. Encrypted lines saved to encrypted.txt and key saved
 > ```bash
 > pip install cryptography
 > ```
+
+# File Decryption with Fernet
+
+Decrypts each line of an encrypted file (`encrypted.txt`) using the key stored in `secret.key`, and outputs the original plaintext.
+
+> 🔑 **Requirement**: You must have the `secret.key` file generated during encryption. Without it, decryption is impossible.
+
+```python
+from cryptography.fernet import Fernet
+
+# 1. Load the key
+with open("secret.key", "rb") as key_file:
+    key = key_file.read()
+
+cipher = Fernet(key)
+
+# 2. Read encrypted lines
+with open("encrypted.txt", "r") as f:
+    encrypted_lines = f.readlines()
+
+# 3. Decrypt each line
+decrypted_lines = [cipher.decrypt(line.strip().encode()).decode() for line in encrypted_lines]
+
+# 4. Print or save
+print("Decrypted content:")
+for line in decrypted_lines:
+    print(line)
+
+# Optionally save to a file
+with open("decrypted.txt", "w") as f:
+    for line in decrypted_lines:
+        f.write(line + "\n")
+```
+
+## Usage Instructions
+1. Ensure the following files are in your working directory:
+   - `secret.key` — the key generated during encryption
+   - `encrypted.txt` — the file produced by the encryption script
+2. Run the script.
+3. The original content will be:
+   - Printed to the console
+   - Saved to `decrypted.txt` (exact copy of the original `main.txt`)
+
+> 💡 **Note**: This script assumes each line in `encrypted.txt` was encrypted independently (as in the companion encryption script).
+
+> 📦 **Install dependency** (if needed):
+> ```bash
+> pip install cryptography
+> ```
+
+# SQLite In-Memory Database Example
+
+Demonstrates creating a table, inserting multiple records, and querying data using an in-memory SQLite database with Python’s `sqlite3` module.
+
+> 💡 **Note**: An in-memory database (`:memory:`) exists only during the program’s execution and is **not persisted to disk**.
+
+```python
+import sqlite3
+
+# Connect to an in-memory SQLite database
+conn = sqlite3.connect(":memory:")
+cursor = conn.cursor()
+
+# Create a table
+cursor.execute('''
+CREATE TABLE users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    username TEXT NOT NULL,
+    password TEXT NOT NULL
+)
+''')
+
+# Insert data
+users = [
+    ('alice', 'password123'),
+    ('bob', 'qwerty'),
+    ('charlie', 'letmein')
+]
+cursor.executemany("INSERT INTO users (username, password) VALUES (?, ?)", users)
+
+# Query and display data
+cursor.execute("SELECT * FROM users")
+for row in cursor.fetchall():
+    print(row)
+
+# Close the connection
+conn.close()
+```
+
+## Expected Output
+```
+(1, 'alice', 'password123')
+(2, 'bob', 'qwerty')
+(3, 'charlie', 'letmein')
+```
+
+> ⚠️ **Security Reminder**: Storing plaintext passwords (as shown here for simplicity) is **unsafe**. In real applications, always store **salted password hashes** (e.g., using `bcrypt` or `argon2`).
+
+> ✅ **No external dependencies**: The `sqlite3` module is part of Python’s standard library.
+
+
+# SQLite Example: Vulnerable Students Table (In-Memory)
+
+Creates an in-memory SQLite database with a `students` table that stores plaintext passwords — illustrating a **common security anti-pattern**.
+
+> ⚠️ **Warning**: Storing passwords in plaintext is **highly insecure**. This example is for educational purposes only.
+
+```python
+import sqlite3
+
+# Create an in-memory SQLite database
+conn = sqlite3.connect(":memory:")
+cursor = conn.cursor()
+
+# Create a vulnerable students table
+cursor.execute('''
+CREATE TABLE students (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    roll TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL
+)
+''')
+
+# Insert sample data
+students = [
+    ('Tanvir', '2023-001', 'topsecret'),
+    ('Nadia', '2023-002', 'password1'),
+    ('Imran', '2023-003', 'hunter2')
+]
+cursor.executemany("INSERT INTO students (name, roll, password) VALUES (?, ?, ?)", students)
+
+cursor.execute("SELECT * FROM students")
+for row in cursor.fetchall():
+    print(row)
+
+# Close the connection
+conn.close()
+```
+
+## Expected Output
+```
+(1, 'Tanvir', '2023-001', 'topsecret')
+(2, 'Nadia', '2023-002', 'password1')
+(3, 'Imran', '2023-003', 'hunter2')
+```
+
+> ✅ **Best Practice**: In real applications:
+> - **Never store plaintext passwords**
+> - Use strong hashing (e.g., `bcrypt`, `argon2`) with unique salts
+> - Consider using parameterized queries consistently (already done here ✅)
+> - Validate and sanitize all inputs
+
+> 💡 The `:memory:` database is temporary and vanishes when the connection closes — useful for testing, not for persistent storage.
+
+## Create a new Student table with fields: id, name, roll, password, salt. Take name, roll, and password as input from the console. Then hash the password after adding salt, save the hashed password and salt.
+
+
+
