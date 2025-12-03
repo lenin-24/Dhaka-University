@@ -246,7 +246,7 @@ conn.close()
 
 > ✅ **No external dependencies**: The `sqlite3` module is part of Python’s standard library.
 
-
+## Simulate a student login system. Your task is to: Create a table students with fields: id, name, roll, password. Insert at least 3 students.
 # SQLite Example: Vulnerable Students Table (In-Memory)
 
 Creates an in-memory SQLite database with a `students` table that stores plaintext passwords — illustrating a **common security anti-pattern**.
@@ -303,5 +303,103 @@ conn.close()
 
 ## Create a new Student table with fields: id, name, roll, password, salt. Take name, roll, and password as input from the console. Then hash the password after adding salt, save the hashed password and salt.
 
+# Secure Student Registration with Salted Password Hashing
+
+Demonstrates how to securely store user passwords in an SQLite database using **unique random salts** and SHA-256 hashing.
+
+> 🔒 **Security Practice**: Each password is hashed with a unique salt to prevent rainbow table attacks and ensure identical passwords produce different hashes.
+
+```python
+import sqlite3
+import hashlib
+import os
+
+# Connect to an in-memory database (or use "students.db" for file-based)
+conn = sqlite3.connect(":memory:")
+cursor = conn.cursor()
+
+# Create the Student table
+cursor.execute('''
+CREATE TABLE Student (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    roll TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    salt TEXT NOT NULL
+)
+''')
+
+# Function to hash a password with a salt
+def hash_password(password, salt):
+    return hashlib.sha256((password + salt).encode()).hexdigest()
+
+# Insert 3 students
+for i in range(3):
+    print(f"\nEnter details for student #{i+1}")
+    name = input("  Name: ").strip()
+    roll = input("  Roll: ").strip()
+    raw_password = input("  Password: ").strip()
+
+    salt = os.urandom(16).hex()  # Generate a 16-byte random salt as hex
+    hashed_password = hash_password(raw_password, salt)
+
+    cursor.execute(
+        "INSERT INTO Student (name, roll, password, salt) VALUES (?, ?, ?, ?)",
+        (name, roll, hashed_password, salt)
+    )
+
+# Display the students in the database
+print("\n✅ All students inserted into database:\n")
+cursor.execute("SELECT id, name, roll, password, salt FROM Student")
+students = cursor.fetchall()
+
+for student in students:
+    print(f"ID: {student[0]}")
+    print(f"Name: {student[1]}")
+    print(f"Roll: {student[2]}")
+    print(f"Hashed Password: {student[3]}")
+    print(f"Salt: {student[4]}")
+    print("-" * 40)
+
+conn.close()
+```
+
+## How It Works
+1. **Unique Salt per User**: `os.urandom(16).hex()` generates a cryptographically secure 16-byte random salt.
+2. **Salted Hashing**: Password + salt are concatenated and hashed with SHA-256.
+3. **Secure Storage**: Both the hash **and** the salt are stored in the database.
+4. **Verification Ready**: To verify a login, retrieve the salt, hash the input password with it, and compare to the stored hash.
+
+## Sample Run (Interactive)
+```
+Enter details for student #1
+  Name: Alice
+  Roll: 2023-001
+  Password: secret123
+
+Enter details for student #2
+  Name: Bob
+  Roll: 2023-002
+  Password: secret123
+
+✅ All students inserted into database:
+
+ID: 1
+Name: Alice
+Roll: 2023-001
+Hashed Password: a1b2c3... (unique hash)
+Salt: f8e7d6... (random salt)
+----------------------------------------
+ID: 2
+Name: Bob
+Roll: 2023-002
+Hashed Password: x9y8z7... (different hash!)
+Salt: a1b2c3... (different salt)
+----------------------------------------
+```
+
+> 💡 **For Production**: While this is a significant improvement over plaintext, consider using **dedicated password hashing libraries** like `bcrypt`, `scrypt`, or `argon2` (via `passlib` or `argon2-cffi`), which are **slower by design** and more resistant to brute-force attacks.
+
+> 📌 **Note**: This example uses an in-memory database (`:memory:`). To persist data, replace `":memory:"` with `"students.db"`.
 
 
