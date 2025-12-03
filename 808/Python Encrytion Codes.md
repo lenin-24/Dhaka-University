@@ -301,7 +301,8 @@ conn.close()
 
 > 💡 The `:memory:` database is temporary and vanishes when the connection closes — useful for testing, not for persistent storage.
 
-<span style="color:blue;">Create a new Student table with fields: id, name, roll, password, salt. Take name, roll, and password as input from the console. Then hash the password after adding salt, save the hashed password and salt.</span>
+## Create a new Student table with fields: id, name, roll, password, salt. Take name, roll, and password as input from the console. Then hash the password after adding salt, save the hashed password and salt.
+
 
 # Secure Student Registration with Salted Password Hashing
 
@@ -402,4 +403,244 @@ Salt: a1b2c3... (different salt)
 
 > 📌 **Note**: This example uses an in-memory database (`:memory:`). To persist data, replace `":memory:"` with `"students.db"`.
 
+## Take the roll and password of a student from input. Now if the ceredentials is correct, print sucessful login. Otherwise, print an error message. If possible, perform the login using a function.
 
+
+# Secure Storage + Intentionally Vulnerable Login (SQL Injection Demo)
+
+This script demonstrates:
+1. ✅ **Secure password storage** using unique random salts and SHA-256 hashing.
+2. ⚠️ **Intentionally vulnerable login logic** that is susceptible to **SQL injection**—for educational purposes only.
+
+> 🛑 **Never use the `login()` function below in real applications!** It illustrates how **NOT** to handle user input.
+
+```python
+import sqlite3
+import hashlib
+import os
+
+# Connect to an in-memory database (or use "students.db" for file-based)
+conn = sqlite3.connect(":memory:")
+cursor = conn.cursor()
+
+# Create the Student table
+cursor.execute('''
+CREATE TABLE Student (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    roll TEXT NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    salt TEXT NOT NULL
+)
+''')
+
+# Function to hash a password with a salt
+def hash_password(password, salt):
+    return hashlib.sha256((password + salt).encode()).hexdigest()
+
+# Insert 3 students
+for i in range(3):
+    print(f"\nEnter details for student #{i+1}")
+    name = input("  Name: ").strip()
+    roll = input("  Roll: ").strip()
+    raw_password = input("  Password: ").strip()
+
+    salt = os.urandom(16).hex()
+    hashed_password = hash_password(raw_password, salt)
+
+    cursor.execute(
+        "INSERT INTO Student (name, roll, password, salt) VALUES (?, ?, ?, ?)",
+        (name, roll, hashed_password, salt)
+    )
+
+# Display the students in the database
+print("\n✅ All students inserted into database:\n")
+cursor.execute("SELECT id, name, roll, password, salt FROM Student")
+students = cursor.fetchall()
+
+for student in students:
+    print(f"ID: {student[0]}")
+    print(f"Name: {student[1]}")
+    print(f"Roll: {student[2]}")
+    print(f"Hashed Password: {student[3]}")
+    print(f"Salt: {student[4]}")
+    print("-" * 40)
+
+
+def login():
+    """
+    ⚠️  WARNING: This login function is intentionally vulnerable to SQL injection!
+    This is for educational purposes only - NEVER use this in production code!
+    """
+    print("\n🔐 Student Login System")
+    print("=" * 30)
+
+    roll = input("Enter Roll Number: ").strip()
+    password = input("Enter Password: ").strip()
+
+    # VULNERABLE QUERY - Direct string concatenation without sanitization
+    query = f"SELECT id, name, roll, salt FROM Student WHERE roll = '{roll}'"
+    print(f"\n🔍 Executing query: {query}")
+
+    try:
+        cursor.executescript(query)  # ⚠️ Dangerous: allows multiple statements
+        result = cursor.fetchone()
+
+        if result:
+            student_id, name, student_roll, salt = result
+
+            # Get the stored password hash
+            cursor.execute(f"SELECT password FROM Student WHERE id = {student_id}")
+            stored_hash = cursor.fetchone()[0]
+
+            # Verify password
+            input_hash = hash_password(password, salt)
+
+            if input_hash == stored_hash:
+                print(f"\n✅ Login successful!")
+                print(f"Welcome, {name} (Roll: {student_roll})")
+                return True
+            else:
+                print("\n❌ Invalid password!")
+                return False
+        else:
+            print("\n❌ Student not found!")
+            return False
+
+    except sqlite3.Error as e:
+        print(f"\n💥 Database error: {e}")
+        return False
+
+# Run login twice to demonstrate behavior
+login()
+login()
+
+conn.close()
+```
+
+## 🔥 SQL Injection Risk Example
+
+The vulnerable line:
+```python
+query = f"SELECT ... WHERE roll = '{roll}'"
+```
+allows an attacker to input something like:
+```
+Roll Number: 2023-001' --
+Password: anything
+```
+Or worse:
+```
+Roll Number: '; DROP TABLE Student; --
+```
+→ Which could **bypass authentication** or **destroy data**.
+
+> 💡 **Secure Alternative**: Always use **parameterized queries**:
+> ```python
+> cursor.execute("SELECT ... WHERE roll = ?", (roll,))
+> ```
+
+## Key Takeaways
+- ✅ Passwords are **securely hashed with unique salts**.
+- ❌ User input is **directly interpolated into SQL** → **SQL injection**.
+- 🚫 `cursor.executescript()` allows **multiple SQL statements** — extremely dangerous with user input.
+- ✅ Use `cursor.execute()` with **parameter placeholders (`?`)** for safety.
+
+> 📚 This script is ideal for **teaching secure coding principles** and **demonstrating attack vectors responsibly**.
+
+> ⚠️ **Reminder**: Close database connections and avoid in-memory databases in production scenarios.
+>
+
+# SQL Injection Demo: Vulnerable vs. Safe Login
+
+This script demonstrates how **SQL injection** can bypass authentication in a vulnerable login function, and how **parameterized queries** prevent it.
+
+> 🛡️ **Key Lesson**: Always use **parameterized queries** (`?` placeholders) — never interpolate user input directly into SQL strings.
+
+```python
+import sqlite3
+
+# Step 1: Setup in-memory database
+conn = sqlite3.connect(":memory:")
+cursor = conn.cursor()
+
+# Create users table
+cursor.execute("""
+CREATE TABLE users (
+    username TEXT,
+    password TEXT
+)
+""")
+
+# Insert a sample user
+cursor.execute("INSERT INTO users VALUES ('admin', 'password123')")
+conn.commit()
+
+# Step 2: Vulnerable login function
+def vulnerable_login(username, password):
+    query = f"SELECT * FROM users WHERE username = '{username}' AND password = '{password}'"
+    print("Executing Query:", query)
+    cursor.execute(query)
+    result = cursor.fetchone()
+    return result is not None
+
+# Step 3: SQL injection attempt
+# Injection payload that always returns true: "' OR '1'='1"
+print("\n--- Vulnerable Login ---")
+username_input = "admin"
+password_input = "' OR '1'='1"
+if vulnerable_login(username_input, password_input):
+    print("Logged in (VULNERABLE)")
+else:
+    print("Login failed")
+
+# Step 4: Safe version using parameterized query
+def safe_login(username, password):
+    query = "SELECT * FROM users WHERE username = ? AND password = ?"
+    print("Executing Query:", query)
+    cursor.execute(query, (username, password))
+    result = cursor.fetchone()
+    return result is not None
+
+print("\n--- Safe Login ---")
+if safe_login(username_input, password_input):
+    print("Logged in (SAFE)")
+else:
+    print("Login failed")
+```
+
+## Expected Output
+```
+--- Vulnerable Login ---
+Executing Query: SELECT * FROM users WHERE username = 'admin' AND password = '' OR '1'='1'
+Logged in (VULNERABLE)
+
+--- Safe Login ---
+Executing Query: SELECT * FROM users WHERE username = ? AND password = ?
+Login failed
+```
+
+## 🔍 What Happened?
+
+### ❌ Vulnerable Query (Dangerous!)
+```sql
+SELECT * FROM users WHERE username = 'admin' AND password = '' OR '1'='1'
+```
+- The condition `'1'='1'` is always **true**.
+- Due to operator precedence, this becomes:  
+  `(password = '') OR ('1'='1')` → **TRUE**, so the row is returned.
+- **Authentication bypassed!**
+
+### ✅ Safe Query (Secure!)
+- The input `' OR '1'='1` is treated as a **literal string**, not SQL code.
+- The database looks for a password **exactly equal** to that string — which doesn’t exist.
+- **Injection neutralized.**
+
+## ✅ Best Practices
+- **Never** use f-strings or `%` formatting to build SQL queries with user input.
+- **Always** use **parameterized queries** (`cursor.execute(query, (param1, param2))`).
+- Validate and sanitize input as an extra layer (but **never rely on it alone**).
+
+> 💡 **Note**: This example uses plaintext passwords for simplicity. In real apps, store **salted password hashes**, not raw passwords.
+
+> 📦 No external dependencies — uses Python’s built-in `sqlite3`.
