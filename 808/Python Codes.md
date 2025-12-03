@@ -14,3 +14,6 @@ x = 45.12
 print(x)
 print(type(x))
 ```
+
+## Assigning multiple variables in same line
+x, y, z = 9, 5, "abc"
