@@ -1,13 +1,4 @@
-Below is a **simple, clear explanation** of **exactly what you need to do in this lab**, step-by-step, based on the PDF you uploaded.
-(Everything is from your file: **Lab 03 – Practical Demonstration of CIA – Confidentiality**.)
-
 ---
-
-# ✅ **WHAT YOU NEED TO DO IN THE LAB (Step-by-Step)**
-
-Your lab focuses on the **CIA Triad**, but in this manual you will perform tasks only for the **Confidentiality pillar**.
-
-You will perform **3 main tasks**:
 
 ---
 
