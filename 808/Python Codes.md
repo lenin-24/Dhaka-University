@@ -103,111 +103,112 @@ print(s)
 print(type(s))
 ```
 
+# String Operations
+
+```python
 # String operations
 
 s = "abc123"
 print(s)
 print(type(s))
 
-print(len(s)) # length of a string
+print(len(s))  # length of a string
 
-print(s[0]) # accessing characters by index
-print(s[5]) # accessing characters by index
+print(s[0])  # accessing characters by index
+print(s[5])  # accessing characters by index
 
-print(s[0:3]) # accessing multiple characters by index
-print(s[2:4]) # accessing multiple characters by index
-print(s[1:5]) # accessing multiple characters by index
-print(s[2:]) # accessing multiple characters by index
+print(s[0:3])  # accessing multiple characters by index
+print(s[2:4])  # accessing multiple characters by index
+print(s[1:5])  # accessing multiple characters by index
+print(s[2:])   # accessing multiple characters by index
 
 s1 = "abc"
 s2 = "xyz"
-s3 = s1 + s2 # concat str with str
+s3 = s1 + s2  # concat str with str
 print(s3)
 
 s = "abc"
 x = 123
-s1 = s + str(x) # concat str with int
+s1 = s + str(x)  # concat str with int
 print(s1)
 
 s = "abc"
 x = 123.56
-s1 = s + str(x) # concat str with float
+s1 = s + str(x)  # concat str with float
 print(s1)
 
 s = "AbC"
-print(s.lower()) # to lowercase
+print(s.lower())  # to lowercase
 
 s = "AbCde"
-print(s.upper()) # to uppercase
-
-print(s.swapcase()) # swapcase
+print(s.upper())      # to uppercase
+print(s.swapcase())   # swapcase
 
 s = "john"
-print(s.capitalize()) # to uppercase first character
+print(s.capitalize())  # to uppercase first character
 
 s = "abcdefghijk"
 k1 = "def"
 k2 = "ytg"
-print(k1 in s) # search in a string
-print(k2 in s) # search in a string
+print(k1 in s)  # search in a string
+print(k2 in s)  # search in a string
 
 s = "           abc                xyz                  "
-print(s.strip()) # strip
-
+print(s.strip())  # strip
 
 s = "abcd1234cd56"
-s1 = s.replace("cd", "xyz") # replacing a substring
+s1 = s.replace("cd", "xyz")  # replacing a substring
 print(s1)
 
-s1 = s.replace("cd", "") # removing a substring
+s1 = s.replace("cd", "")     # removing a substring
 print(s1)
 
-s1 = s.replace("cd", " ") # replacing a substring
+s1 = s.replace("cd", " ")    # replacing a substring
 print(s1)
 
 s = "abc,def,xyz"
-l = s.split(",") # split
+l = s.split(",")  # split
 print(l)
 
 s = "abc def xyz"
-l = s.split(" ") # split
+l = s.split(" ")  # split
 print(l)
 
 s = "abc, def, xyz"
-l = s.split(", ") # split
+l = s.split(", ")  # split
 print(l)
 
 s = "abcdefcdxyz"
-l = s.split("cd") # split
+l = s.split("cd")  # split
 print(l)
 
 s = "Topic sentences are similar to mini thesis statements. Like a thesis statement, a topic sentence has a specific main point. Like the thesis statement, a topic sentence has a unifying function."
-l = s.split(". ") # split
+l = s.split(". ")  # split
 print(l)
 
 s = "abc1234"
-print(s.startswith("abc")) # starts with
-print(s.startswith("bc")) # starts with
-print(s.endswith("34")) # ends with
-print(s.endswith("bc")) # ends with
-
+print(s.startswith("abc"))  # starts with
+print(s.startswith("bc"))   # starts with
+print(s.endswith("34"))     # ends with
+print(s.endswith("bc"))     # ends with
 
 s = "abcd1234cd"
 k = "cd"
-print(s.count(k)) # counting substring
-print(s.count("9023902")) # counting substring
-print(s.count(k,0,5))
+print(s.count(k))              # counting substring
+print(s.count("9023902"))      # counting substring
+print(s.count(k, 0, 5))        # count in slice [0:5]
 
 s = "abxcd123"
 k = "cd"
-print(s.index(k)) # find index
+print(s.index(k))              # find index
 
 s = "abxcd123cd23"
 k = "cd"
-print(s.index(k)) # find index
-print(s.rindex(k)) # find right index
+print(s.index(k))              # find index
+print(s.rindex(k))             # find right index
 
 s1 = "1234"
 s2 = "x1yz"
 print(s1.isdigit())
 print(s2.isdigit())
+```
