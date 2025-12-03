@@ -61,6 +61,7 @@ z = x ** y # exponentiation
 z = x/(y + y) - z # multiple operations
 ```
 ## casting
+```
 s = "123"
 print(s)
 print(type(s))
@@ -100,3 +101,4 @@ y = 3
 s = str(y) # int to str
 print(s)
 print(type(s))
+```
