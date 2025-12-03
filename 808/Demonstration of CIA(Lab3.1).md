@@ -121,21 +121,4 @@ No commands required in this lab.
 
 ---
 
-# ✅ **SUMMARY — WHAT YOU MUST DO**
 
-| Task                      | What You Do                 | Commands                            |
-| ------------------------- | --------------------------- | ----------------------------------- |
-| **Encoding**              | Base64 & Hex                | `base64`, `xxd`                     |
-| **Symmetric Encryption**  | AES encrypt + decrypt       | `openssl enc`                       |
-| **Asymmetric Encryption** | RSA key + encrypt + decrypt | `openssl genrsa`, `openssl pkeyutl` |
-| **Hashing**               | Understand only             | No commands                         |
-
----
-
-# If you want, I can also make:
-
-✅ a **checklist to follow during your lab**
-✅ a **cheat sheet** with all commands in one place
-✅ explain **why we used pkeyutl** (from your earlier confusion)
-
-Just tell me.
