@@ -95,6 +95,13 @@ print(type(x))
 y = 3
 x = float(y)    # int to float
 print(x)
+print(type(x))
+
+y = 3
+s = str(y)      # int to str
+print(s)
+print(type(s))
+```
 
 # String operations
 
@@ -204,39 +211,3 @@ s1 = "1234"
 s2 = "x1yz"
 print(s1.isdigit())
 print(s2.isdigit())
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-print(type(x))
-
-y = 3
-s = str(y)      # int to str
-print(s)
-print(type(s))
-```
