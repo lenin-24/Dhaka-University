@@ -1,4 +1,8 @@
+✅ WHAT YOU NEED TO DO IN THE LAB (Step-by-Step)
 
+Lab focuses on the CIA Triad, but in this manual you will perform tasks only for the Confidentiality pillar.
+
+You will perform 3 main tasks:
 
 # **🔵 PART 1 — Data Encoding & Decoding (Base64 and Hex)**
 
