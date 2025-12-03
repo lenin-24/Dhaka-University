@@ -24,9 +24,11 @@ x, y, z = 9, 5, "abc"
 
 
 ### bool
-
+```python
 x = True
+```
 ### list
+```
 x = [1,2,3,4,5.7, "abc"]
 print(x)
 print(x[4])
@@ -36,7 +38,7 @@ x.append(2)
 print(x)
 print(len(x))
 print(type(x))
-
+```
 
 ### tuple
 x = (1,2, "abc")
