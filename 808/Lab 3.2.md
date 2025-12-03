@@ -1,5 +1,3 @@
-Here is a **clear, simple breakdown** of **exactly what you need to do** for the **Integrity Lab**, based fully on the PDF you uploaded.
-(This is like the previous explanation but for the **Integrity** part.)
 
 ---
 
@@ -122,11 +120,3 @@ md5deep:
 |                | MD5 directory recursive     | `md5deep -r directory`                               |
 
 ---
-
-If you want, I can also make:
-
-✅ A **checklist** to follow during lab
-✅ A **one-page cheat sheet** with all commands
-✅ A **short explanation of each hashing algorithm**
-
-Just tell me!
