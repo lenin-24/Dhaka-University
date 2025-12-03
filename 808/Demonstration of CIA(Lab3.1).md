@@ -107,17 +107,7 @@ cat pmics_decrypted.txt
 
 ---
 
-# **🟡 Extra Part (In Lecture Only, Not Hands-On): Hashing**
 
-You only need to understand hashing types:
-
-* MD5
-* SHA-1
-* SHA-2 (SHA-256, SHA-512)
-* SHA-3
-* Whirlpool
-
-No commands required in this lab.
 
 ---
 
