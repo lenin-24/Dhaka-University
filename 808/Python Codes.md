@@ -212,3 +212,79 @@ s2 = "x1yz"
 print(s1.isdigit())
 print(s2.isdigit())
 ```
+
+## If Statement
+
+```
+# if else
+x = 5
+y = 2
+z = 3
+
+if x > y:
+  print("hello")
+elif y > z:
+  print("hello2")
+elif x < z:
+  print("hello3")
+else:
+  print("hello4")
+
+# while loop with break
+i = 1
+
+while i <= 20:
+  print(i)
+  i += 1
+  if i == 5:
+    break
+
+# while loop with continue
+
+i = 0
+
+while i <= 10:
+  i += 1
+  if i == 5:
+    continue
+  print(i)
+
+# range function
+print(list(range(10)))
+print(list(range(0,10)))
+```
+
+## Loop
+```
+# for loop
+for i in range(4):
+  print(i)
+print()
+
+for i in range(4,10):
+  print(i)
+print()
+```
+
+# iterating a list
+```
+L = ["a", "b", "c"]
+
+for i in L:
+	print(i)
+```
+# iterating dictionary keys
+```
+d = {"a": 1, "b": 2, "c": 3}
+
+for i in d:
+	print(i)
+```
+
+# iterating dictionary keys and values
+```
+d = {"a": 1, "b": 2, "c": 3}
+
+for i in d:
+	print(i, d[i])
+```
