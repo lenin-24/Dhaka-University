@@ -15,15 +15,19 @@ firstly open the default burp browser than go to (ginandjuice.shop)
 now if I go to Proxy tab -> Http History than i will be able to see my request
 ```
 ## how to block & edit requests 
-in Proxy tab -> Intercept i turn on the Intercept button than that webpage will not work.
+```
+In Proxy tab -> Intercept i turn on the Intercept button than that webpage will not work.
 than in lower tab i will have the option to edit  if i gave name which doesnt exist it will give 404 error
-
+```
 ## how to manipulate webpage response
-
+```
 After editing the request message we can do right click on the below proxy edit tab than go to "Do intercept -> Response to this request"
-
+```
 ## How to crawl website
+```
+Firstly we need to scope our target website as other requests might interfer
 
 
+```
 
 
