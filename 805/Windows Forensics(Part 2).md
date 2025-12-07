@@ -59,3 +59,40 @@
   - Filter current log: **Event ID = 4724**
   - Review events to see if BillyBob performed a password reset.
   - Check **Event Properties** for confirmation and target user details.
+
+
+# Images
+
+## 1
+![1](https://github.com/user-attachments/assets/e918bcda-26c3-41c5-b157-d4093d715255)
+
+## 2
+![2](https://github.com/user-attachments/assets/92756863-bf5e-4bda-8206-8e93d863bcbd)
+
+
+## 3
+![3](https://github.com/user-attachments/assets/fa2b1989-3a6e-46a8-af06-3c7951cdfe20)
+
+## 4
+![4](https://github.com/user-attachments/assets/7edf7ffb-e50f-41f1-baed-ef21b3382852)
+
+## 5
+![5](https://github.com/user-attachments/assets/aafd18e7-d8b4-4f1b-9da6-637b4ab0fdae)
+
+## 6
+![6](https://github.com/user-attachments/assets/7623f077-8ca6-4b66-8b8c-8eb3f1df8adf)
+
+## 7
+![7](https://github.com/user-attachments/assets/c180b436-51f0-4cfb-97fe-ccdcdd8848c0)
+
+## 8
+![8](https://github.com/user-attachments/assets/a5ed6ea0-d40a-4659-a2f5-fc8b31deff02)
+
+## 9
+![9](https://github.com/user-attachments/assets/246df15c-fc32-4b2d-8794-47bb658f1fda)
+
+## 10
+
+![10](https://github.com/user-attachments/assets/c3bb3c50-0c07-4611-8fe6-7baa9176ed17)
+
+
