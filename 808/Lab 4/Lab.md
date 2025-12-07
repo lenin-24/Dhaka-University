@@ -22,4 +22,7 @@ Install Windows 7 using an ISO.
 Disable Windows Defender:
 ```
 
+### Step 2: Generate Malicious Payload
+
+
 
