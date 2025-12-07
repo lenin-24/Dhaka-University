@@ -1,8 +1,8 @@
 # lab work revolves around ethical penetration testing using the Cyber Kill Chain model, with two main practical tracks:
-
+```
     i. Windows-based client-side attack (via payload delivery and privilege escalation)
    ii. Server-side FTP vulnerability exploitation (on Metasploitable Linux)
-
+```
 ## 🔧 Prerequisites
 ```
 Make sure you have:
