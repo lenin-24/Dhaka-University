@@ -14,6 +14,12 @@ Make sure you have:
     All VMs on the same network mode (Host-only or Bridged as needed)
 ```
 
-
+## 🛠️ TRACK 1: Windows Client Compromise (Reverse TCP + Privilege Escalation)
+### Step 1: Set Up Vulnerable Windows 7 VM
+```
+Create a new VM in VirtualBox
+Install Windows 7 using an ISO.
+Disable Windows Defender:
+```
 
 
