@@ -2,6 +2,39 @@
 
 # Step-by-Step Digital Forensics Investigation Using Autopsy
 
+# File that you need to open in autopsy
+```
+[Uploadi<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<AutopsyCase>
+  <SchemaVersion>6.0</SchemaVersion>
+  <CreatedDate>2025/11/18 01:06:10 (BDT)</CreatedDate>
+  <ModifiedDate>2025/11/18 01:06:14 (BDT)</ModifiedDate>
+  <CreatedByAutopsyVersion>4.22.1</CreatedByAutopsyVersion>
+  <SavedByAutopsyVersion>4.22.1</SavedByAutopsyVersion>
+  <Case>
+    <Name>lab_image_investigation_20251118_010610</Name>
+    <DisplayName>Lab_Image_Investigation</DisplayName>
+    <Number>001</Number>
+    <Examiner>Lenin</Examiner>
+    <ExaminerPhone/>
+    <ExaminerEmail/>
+    <CaseNotes/>
+    <CaseType>Single-user case</CaseType>
+    <Database/>
+    <CaseDatabase>autopsy.db</CaseDatabase>
+    <TextIndex/>
+  </Case>
+  <ContentProvider>
+    <Name/>
+  </ContentProvider>
+  <OriginalCase/>
+</AutopsyCase>
+ng Lab_Image_Investigation.aut…]()
+
+
+
+```
+
 ## Phase 1: Setting Up the Case in Autopsy
 
 ### Step 1: Install and Launch Autopsy
