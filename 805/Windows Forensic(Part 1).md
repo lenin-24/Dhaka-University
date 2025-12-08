@@ -3,7 +3,7 @@
 # Step-by-Step Digital Forensics Investigation Using Autopsy
 
 # File that you need to open in autopsy
-```
+
 [Uploadi<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <AutopsyCase>
   <SchemaVersion>6.0</SchemaVersion>
@@ -31,9 +31,6 @@
 </AutopsyCase>
 ng Lab_Image_Investigation.aut…]()
 
-
-
-```
 
 ## Phase 1: Setting Up the Case in Autopsy
 
