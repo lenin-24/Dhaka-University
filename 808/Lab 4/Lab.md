@@ -144,7 +144,7 @@ set session 1
     1. Identify your Kali Linux IP (the one reachable by the Windows VM):
     
     ip a
-  #### Example: 192.168.56.102  (likely same as your original handler)
+  ### Example: 192.168.56.102  (likely same as your original handler)
    
     2. In the bypassuac module, set both SESSION and LHOST:
    
