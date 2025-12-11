@@ -114,9 +114,11 @@ Now we will come back to our msfconsole terminal by typing command “background
 background
 ```
 
-We can view our session by using the command “sessions”. 
+We can view our session by using the 
 **Command**: 
-```sessions ```
+```
+sessions
+ ```
 
 
 
