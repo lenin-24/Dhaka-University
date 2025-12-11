@@ -128,7 +128,8 @@ use exploit/windows/local/bypassuac
 ### Step : Check the pending required option and active 
 background sessions 
 **Command**: 
-```sessions -i
+```
+sessions -i
 ```
 
 
