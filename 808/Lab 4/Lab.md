@@ -44,3 +44,12 @@ python3 -m http.server -b <your_machine_ip> <port_number>
 ### Now download the payload you have just created. 
 
 
+System Exploitation & Gaining Access
+
+Step 1: Go to terminal and use the below command to start 
+metasploit console 
+Command: msfconsole  
+
+
+
+
