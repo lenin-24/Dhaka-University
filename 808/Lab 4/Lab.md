@@ -131,5 +131,23 @@ background sessions
 ```
 sessions -i
 ```
+### Step : Set Session 
+We have found one active session is running in the background which Id is 1, now we will use this session to complete the 
+privilege escalation by bypassing the UAC. And after setting up everything, we will execute attack by using “exploit” command. 
+**Command**: 
+```
+set session 1 
+```
+**Command**:
+```
+exploit
+```
+### Step 12: Gained system access 
+Now we have gained administrator access and successfully bypasses the User Access Control 
+(UAC). To check this, type the previous command which we have used earlier to check the UAC. 
+**Command**:
+``` 
+getsystem 
+```
 
 
