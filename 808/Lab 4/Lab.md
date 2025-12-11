@@ -89,5 +89,3 @@ exploit
 sysinfo 
 **Command**: 
 getsystem 
-
-
