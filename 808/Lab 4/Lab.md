@@ -3,7 +3,7 @@
     1. Windows-based client-side attack (via payload delivery and privilege escalation)
     2. Server-side FTP vulnerability exploitation (on Metasploitable Linux)
 ```
-## 🔧 Prerequisites 
+## 🔧 Prerequisites
 ```
 Make sure you have:
 
