@@ -13,9 +13,16 @@ At first on a website if i go to forget pasword in login section and give the ma
 mail http://crapi.apisec.ai:8025/ to change password.
 ### now if i want to annoy that user 
 i can capture the request send usng the burp suite and than right click the request and 
-select "send to intruder" there select any number on the requext and click "Add $"
+select "send to intruder" there select any number on the request and click "Add $"
+than go to payload tab and payload set= 1
+payload type = number
+**payload settings**
+from =1
+to = 1000
 
-http://crapi.apisec.ai:8025/
+than start attack
+
+than 1000 otp will go to this mail http://crapi.apisec.ai:8025/
 
 
 
