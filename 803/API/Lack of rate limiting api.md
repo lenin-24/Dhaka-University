@@ -48,7 +48,7 @@ happens.
 
 to do this when a request occurs we can right click it and select "Send to Repeater"
 and click send button than in response we will see all personal details like id,email,
-vehicleID etc
+vehicleID etc.
 
 
 
