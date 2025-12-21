@@ -14,8 +14,11 @@ mail http://crapi.apisec.ai:8025/ to change password.
 ### now if i want to annoy that user 
 i can capture the request send usng the burp suite and than right click the request and 
 select "send to intruder" there select any number on the request and click "Add $"
-than go to payload tab and payload set= 1
+than go to payload tab and 
+
+payload set= 1
 payload type = number
+
 **payload settings**
 from =1
 to = 1000
