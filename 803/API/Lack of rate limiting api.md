@@ -40,6 +40,15 @@ now with PUT method we can change/update a function than we can use DELETE to de
 instead of PUT we write DELETE and press send but if the person is of user role and doesnt have access or authorization to delete than in that request instead of user we rewrite it as admin to 
 check if it really works.
 
+# API Security Excessive Data Exposure 
+
+now if i make a post or make a comment a request is generated to make it happen now if uisng 
+burp suite attacker can see all my personal info than API Security Excessive Data Exposure  
+happens.
+
+to do this when a request occurs we can right click it and select "Send to Repeater"
+and click send button than in response we will see all personal details like id,email,
+vehicleID etc
 
 
 
