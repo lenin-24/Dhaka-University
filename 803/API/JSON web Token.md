@@ -9,3 +9,7 @@ iii. signature (encrypted msg used to validate token)
 
 
 http://crapi.apisec.ai/login
+
+username= test999@test.com
+
+password= Aa@12345
