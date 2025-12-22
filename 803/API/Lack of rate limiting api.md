@@ -12,6 +12,8 @@ http://43.230.120.10:8025/
 
 https://github.com/mailhog/MailHog
 
+https://43.230.120.10:8443/login
+
 
 At first on a website if i go to forget pasword in login section and give the mail id to sent otp than it sends a otp to the 
 mail http://crapi.apisec.ai/8085 to change password.
