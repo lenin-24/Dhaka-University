@@ -57,6 +57,32 @@ and click send button than in response we will see all personal details like id,
 vehicleID etc.
 
 
+# Password reset
+at first fo to https://43.230.120.10:8443/login  
+
+and mail https://github.com/mailhog/MailHog 
+
+go to forget password and give mail and select send OTP
+
+also need to check if old version when trying to attack
+
+so after sending req for otp right click it send to intruder and than click 
+the otp and click "Add $"  
+
+payload type number
+
+as the otp is max 4 digit we can do from 0 to 9999 brute froce attack
+select minimum number 4 in below.
+
+in that way we can get otp correct otp will give code 200
+
+
+
+
+
+
+
+
 
 
 
