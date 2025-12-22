@@ -9,6 +9,10 @@ subscription could enjoy higher limits, faster response times, or additional fea
 
 
 http://43.230.120.10:8025/
+
+https://github.com/mailhog/MailHog
+
+
 At first on a website if i go to forget pasword in login section and give the mail id to sent otp than it sends a otp to the 
 mail http://crapi.apisec.ai/8085 to change password.
 ### now if i want to annoy that user 
