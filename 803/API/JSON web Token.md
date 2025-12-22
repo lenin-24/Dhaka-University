@@ -36,7 +36,7 @@ now if after click send get "Invalid token " it means that website doest have th
 
 in 103.117.194.181:3000 webpage we can use this attack
 first use test as username to see.
-do the same process if can access than need to make it admin to attack so change payload to admin
+do the same process if can access than need to make it admin to attack so change payload to admin.
 
 
 
