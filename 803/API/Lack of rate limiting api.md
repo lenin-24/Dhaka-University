@@ -10,7 +10,7 @@ subscription could enjoy higher limits, faster response times, or additional fea
 
 
 At first on a website if i go to forget pasword in login section and give the mail id to sent otp than it sends a otp to the 
-mail http://crapi.apisec.ai:8025/ to change password.
+mail http://crapi.apisec.ai/login to change password.
 ### now if i want to annoy that user 
 i can capture the request send usng the burp suite and than right click the request and 
 select "send to intruder" there select any number on the request and click "Add $"
@@ -25,7 +25,7 @@ to = 1000
 
 than start attack
 
-than 1000 otp will go to this mail http://crapi.apisec.ai:8025/
+than 1000 otp will go to this mail http://crapi.apisec.ai/login
 
 
 # API security broken function lvl Auth
