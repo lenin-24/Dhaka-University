@@ -6,3 +6,6 @@ It has 3 parts
 i. header (What type of algo is used)
 ii. payload(username and time after when it gets expired)
 iii. signature (encrypted msg used to validate token)
+
+
+http://crapi.apisec.ai/login
