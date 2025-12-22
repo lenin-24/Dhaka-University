@@ -52,7 +52,7 @@ vehicleID etc.
 
 
 # Password reset
-at first fo to https://43.230.120.10:8443/login  
+at first go to https://43.230.120.10:8443/login  
 
 and mail  http://43.230.120.10:8025/
 
