@@ -38,6 +38,39 @@ in 103.117.194.181:3000 webpage we can use this attack
 first use test as username to see.
 do the same process if can access than need to make it admin to attack so change payload to admin.
 
+## Cracking the Secret
+
+here you can find common secret key used in signature
+
+https://github.com/danielmiessler/SecLists/blob/master/Passwords/Leaked-Databases/rockyou-20.txt
+
+Tool used = jwt tool
+
+https://github.com/ticarpi/jwt_tool
+
+download zip and install
+
+create a wordlist.txt file in that folder than cmd in that folder 
+
+and give command
+
+pip install -r requirements.txt 
+
+than run command
+
+python3 jwt_tool.py (paste the json token here ) -C -d wordlist.txt 
+
+so we got the signature "carpi"
+
+now my mail is test999.com and want to access srk@gmail.com i need to crack its signature now i cracked my signature which is carpi
+
+now i need to go to https://www.jwt.io/ 
+
+and give my old token and edit the payload from test999.com to srk@gmail.com
+and give signature carpi to generate an authenticate token to get target info.
+
+paste the token in repeater and grt the info 
+
 
 
  
