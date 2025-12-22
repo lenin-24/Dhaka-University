@@ -32,6 +32,17 @@ and give burp proxy in the proxy server
 now if i click get dashboard in postman  and send reuest i will get the request
 in burp suite and work with it like the older tasks similarlly.
 
+### if in url i can change id and get value of other users than that vulnerability is called BOLA 
+
+IDOR is simply another type of Broken Access Control issue. IDORs
+happen when users can access resources that do not belong to them
+by directly referencing the object. Object can be ID, number or
+filename.
+
+### if i am a user and want to delete some of my data but i dont have access as i am a user but still can gain admin access and delete it than that is called BFLA (broken function level authorization)
+
+
+
 
  
 
