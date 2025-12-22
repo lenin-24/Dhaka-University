@@ -41,8 +41,13 @@ filename.
 
 ### if i am a user and want to delete some of my data but i dont have access as i am a user but still can gain admin access and delete it than that is called BFLA (broken function level authorization)
 
+### process of attack
 
+at first see the video id in burp request
 
+also if we want to see if we can do BOLA than we can go to intruder tab and select the id and click "Add $" than on filter payload type Numbers from 1 to 100 
+
+ 
 
  
 
