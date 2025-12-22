@@ -47,6 +47,14 @@ at first see the video id in burp request
 
 also if we want to see if we can do BOLA than we can go to intruder tab and select the id and click "Add $" than on filter payload type Numbers from 1 to 100 
 
+code with 200 are the ones present to expoit
+
+So after identify the prodID give that in url and put admin priviledge if need and put DELETE 
+cmd.
+
+
+
+
  
 
  
