@@ -69,7 +69,7 @@ now i need to go to https://www.jwt.io/
 and give my old token and edit the payload from test999.com to srk@gmail.com
 and give signature carpi to generate an authenticate token to get target info.
 
-paste the token in repeater and grt the info 
+paste the token in repeater and get the info 
 
 
 
