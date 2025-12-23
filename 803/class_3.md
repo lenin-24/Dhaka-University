@@ -14,6 +14,14 @@ give diff numbers to understand which field is vul.
 
 If in a url if i paste <script>alert(9999)</script> and it shows alert than injection is possible
 
+Possible Parameters to look for:
+
+daemon= , host= , upload= , to= , dir= , execute= , download= , log= , ip= , cli= , cmd= , path= , username= , uri= , url=
+
+
+ whoami
+ uname -a
+
  
 
 
