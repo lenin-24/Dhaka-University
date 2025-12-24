@@ -69,6 +69,33 @@ than from top copy the SQLMap Command
 than go to the earlier CMD and write
 
 python3 sqlmap.py (paster the command) 
+or
+python sqlmap.py (paster the command) 
 
 than ques [Do you want to skip test payloads ? give Y 
+
+than for all test give Y
+
+
+Now we want to dump the full data base than command 
+
+python sqlmap.py (paster the command) --dump
+
+do you want to store hashes to a temporary file for eventual further processing with other tools
+give N
+
+do you want to crack them via a dictionary-based attack? Give Y
+
+what dictionary do you want to use?
+[1] default dictionary file 'D:\Apps\803\sqlmap\sqlmap-1.8\data\txt\wordlist.tx_' (press Enter)
+[2] custom dictionary file
+[3] file with list of dictionary files
+>
+>give 1
+>
+
+do you want to use common password suffixes? (slow!)
+give N
+
+
 
