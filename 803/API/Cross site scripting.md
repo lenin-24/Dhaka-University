@@ -24,6 +24,16 @@ go to http://43.230.120.10:8000/
 and try every urland see if xploit is possible with this <script> confirm(1)</script>
 
 
+than go to 
+http://43.230.120.10:8000/post.php?pid=3
+
+open burp request and send to intruder mark number of pid "1" with Add $
+
+
+than right click it to "scan defined insertion points" -> scan config -> custom 
+unmark all scan and search in filter and mark all related to sql injection maybe 3 are there 
+than mark all related to cross site scripting first 5 of them
+
 
 
 
