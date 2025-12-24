@@ -34,6 +34,17 @@ than right click it to "scan defined insertion points" -> scan config -> custom
 unmark all scan and search in filter and mark all related to sql injection maybe 3 are there 
 than mark all related to cross site scripting first 5 of them
 
+## store cross site scripting
+
+in http://43.230.120.10:8000/registration.php
+fill up all info with script
+<script> confirm(11111)</script>
+<script> confirm(22222)</script> 
+.........
+and email = test999@gmail.com
+
+than where ever i go a popup willappear so stored script data is showed so vul.
+
 
 
 
