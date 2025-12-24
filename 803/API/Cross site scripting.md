@@ -45,6 +45,12 @@ and email = test999@gmail.com
 
 than where ever i go a popup willappear so stored script data is showed so vul.
 
+### sometiomes developers put code to block attackers by keeping some default code we can bypass them by writing
+
+
+<scrscriptipt> confirm(22222)</scrscriptipt> 
+
+
 
 
 
