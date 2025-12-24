@@ -77,6 +77,10 @@ python3 jwt_tool.py (paste the json token here ) -C -d wordlist.txt
 
 so we got the signature "carpi"
 
+but the new website (https://43.230.120.10:8443/ ) doesnt let see signature
+so we cant keep carpi in wordlist so it can match now if if we go to old ( http://crapi.apisec.ai)
+and go to shop tab and copy that request and see the request token in https://www.jwt.io/ than we can see . 
+
 now my mail is test999.com and want to access srk@gmail.com i need to crack its signature now i cracked my signature which is carpi
 
 now i need to go to https://www.jwt.io/ 
