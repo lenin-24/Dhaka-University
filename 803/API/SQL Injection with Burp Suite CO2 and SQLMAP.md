@@ -25,4 +25,50 @@ python sqlmap.py
 
 as some windpws have problem with python3
 
+Next go to https://security-vault.security-pedia.com/26.php
+
+in log in give
+
+username= test'
+pass=1234
+
+after enter it will show an error
+
+than we go to view request and see if a params tick mark is present 
+
+than right click to send to repeater
+
+than in there we delete the sign (') in username in the request tab and click send
+
+than right click inside the tab and go to extensions->CO2-> Send to SQLMapper
+
+there in options tab 
+
+options-> injection->testable Parameters write username
+
+than from top copy the SQLMap Command
+
+than go to the earlier CMD and write
+
+python3 sqlmap.py (paster the command) 
+
+than ques [Do you want to reduce number of image than you give input N]
+
+
+another one
+
+go to http://testphp.vulnweb.com/listproducts.php?cat=1
+
+put (') in cat=1
+we get error
+than open in request earlier and do smae steps  but now in 
+options-> injection->testable Parameters write cat
+
+than from top copy the SQLMap Command
+
+than go to the earlier CMD and write
+
+python3 sqlmap.py (paster the command) 
+
+than ques [Do you want to skip test payloads ? give Y 
 
