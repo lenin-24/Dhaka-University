@@ -48,7 +48,7 @@ Tool used = jwt tool
 
 https://github.com/ticarpi/jwt_tool
 
-download zip and install
+download zip and install by 
 
 create a wordlist.txt file in that folder than cmd in that folder 
 
