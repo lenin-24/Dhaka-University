@@ -58,6 +58,21 @@ pip install -r requirements.txt
 
 than run command
 
+than go to 
+
+https://43.230.120.10:8443/dashboard
+
+username = test999@gmail.com
+pass= Aa@12345
+
+than go to click here to send mail in hog 
+copy the pin and VIN
+
+go to extentions and download json web tokens in BApp 
+ 
+than on this link do right click and send to repeater
+GET /community/api/v2/community/posts/re
+
 python3 jwt_tool.py (paste the json token here ) -C -d wordlist.txt 
 
 so we got the signature "carpi"
