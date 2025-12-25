@@ -15,6 +15,8 @@ username= test999@test.com
 password= Aa@12345
 
 
+To get a token of a request we can take the login request send to repeater and see in response
+
 ## Non Algo Attack
 
 ### process 
