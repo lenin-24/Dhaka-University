@@ -91,5 +91,21 @@ and give signature carpi to generate an authenticate token to get target info.
 paste the token in repeater and get the info 
 
 
+## BFLA
+
+go to http://crapi.apisec.ai/my-profile
+
+change video name
+
+take that PUT request to Repeater
+
+change the PUT command to DELETE and give admin privileage in the url
+
+
+
+
+
+
+
 
  
