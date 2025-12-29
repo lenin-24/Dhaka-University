@@ -46,6 +46,12 @@ Use the tool from C:\streams.exe
 Target the file at D:\DU\ADS\ADS_Lab\testfile.txt
 
 
+memory forensics link 
+
+https://docs.google.com/forms/d/e/1FAIpQLSfnfayI3LgNi_CsmtKNZErGxDcKQFA-ZM-cDofVkLBq5zzOAw/viewscore?viewscore=AE0zAgAq2JCuIUx1W0gZ4ET0yHlwPCGKwF0ymBNWxGY6MGcEJ-EqmHTsUY1R6tMxEA
+
+
+
 ![delete ads](https://github.com/user-attachments/assets/69d5c6c3-40c2-46d9-a5ab-90ac3084feeb)
 
 
