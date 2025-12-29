@@ -31,8 +31,12 @@
 | 1                            | Console/Interactive User Session – where the logged‑in user works  |
 | N/A	                         | Internal system processes not directly tied to a session  |
   
-           
-          
+### Computer name
+search for "console" after using cmd 
+```
+vol.exe -f wmd.mem windows.sessions
+```
+       
 
           
 
