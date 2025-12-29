@@ -36,7 +36,9 @@ search for "console" after using cmd
 ```
 vol.exe -f wmd.mem windows.sessions
 ```
-       
+### To get the PPID
+
+vol.exe -f wmd.mem windows.pslist
 
           
 
