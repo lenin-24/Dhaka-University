@@ -17,7 +17,7 @@ cmd to verify dump file
 vol.exe -f wmd.mem windows.info
 ```
 
-
+## Volatility 3 Plugin Descriptions
 
 | Plugin                 | Purpose                                                       | Notes                                               |
 | ---------------------- | ------------------------------------------------------------- | --------------------------------------------------- |
@@ -32,3 +32,15 @@ vol.exe -f wmd.mem windows.info
 | **windows.filescan**   | Carves FILE_OBJECTs to locate hidden or deleted files         | Very useful for ransomware investigations           |
 | **windows.evtx**       | Extracts and parses Windows Event Log records from memory     | Correct plugin name is windows.evtx (not eventevtx) |
 
+
+## Additional Very Useful Plugins
+
+| Plugin                        | Purpose                                                   |
+| ----------------------------- | --------------------------------------------------------- |
+| **windows.netscan**           | Shows network connections (TCP/UDP) & malware C2 channels |
+| **windows.malfind**           | Detects injected or suspicious code inside processes      |
+| **windows.cmdline**           | Shows command-line arguments of processes                 |
+| **windows.cmdscan**           | Recovers command history from console buffers             |
+| **windows.registry.hivelist** | Lists registry hives recovered from memory                |
+| **windows.registry.printkey** | View specific registry keys and malware persistence       |
+| **windows.svcscan**           | Lists services including hidden or malicious ones         |
