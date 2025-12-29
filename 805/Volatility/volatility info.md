@@ -12,3 +12,11 @@
 | **Version 1903**      | **18362**    |
 | Version 1909          | 18363        |
 | Version 2004          | 19041        |
+
+### Windows 7
+
+| Windows Edition              | NtMajorVersion | NtMinorVersion | Build Number |
+| ---------------------------- | -------------- | -------------- | ------------ |
+| Windows 7 (Original Release) | 6              | 1              | 7600         |
+| Windows 7 SP1                | 6              | 1              | 7601         |
+
