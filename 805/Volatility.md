@@ -25,13 +25,21 @@ vol.exe -f wmd.mem windows.info
 vol.exe -f wmd.mem windows.sessions
 
 vol.exe -f wmd.mem windows.netscan
+
 vol.exe -f wmd.mem windows.pslist
+
 vol.exe -f wmd.mem windows.pstree
+
 vol.exe -f wmd.mem windows.psscan
+
 vol.exe -f wmd.mem windows.cmdline
+
 vol.exe -f wmd.mem windows.dlllist
+
 vol.exe -f wmd.mem windows.hashdump
+
 vol.exe -f wmd.mem windows.registry.hivelist
+
 vol.exe -f wmd.mem windows.filescan
 
 
