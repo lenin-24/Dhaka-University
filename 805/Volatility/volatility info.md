@@ -25,6 +25,8 @@
 
 Session ID	  Purpose
 0	            System Services Session (Session 0) – background OS services, no user interaction
+
 1	            Console/Interactive User Session – where the logged‑in user works
+
 N/A	          Internal system processes not directly tied to a session
 
