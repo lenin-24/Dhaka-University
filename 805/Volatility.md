@@ -7,3 +7,15 @@ volatility link
 https://drive.google.com/file/d/13sHXEhSPD75VueHXcZZ2HeACtVB8G1m3/view
 
 
+cmd to check installation
+```
+vol.exe –h
+```
+
+cmd to verify dump file 
+```
+vol.exe -f wmd.mem windows.info
+```
+
+
+
