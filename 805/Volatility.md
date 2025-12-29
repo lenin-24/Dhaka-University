@@ -32,6 +32,7 @@ vol.exe -f wmd.mem windows.hashdump
 vol.exe -f wmd.mem windows.registry.hivelist
 vol.exe -f wmd.mem windows.filescan
 
+
 ....................................................................................................................
 
 windows.info – Identifies the operating system, architecture, and boot time to establish the system context.
