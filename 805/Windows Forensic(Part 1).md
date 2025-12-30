@@ -194,6 +194,15 @@ There you will see the software (KeePass, LastPass, 1Password, Bitwarden, etc)
 `KeePass Password Safe 2.55`
 
 ---
+## Question 10:Find the disk or partition encryption software used by the user?
+Use "File Search" feature  
+In the search box at top right, type: "TrueCrypt or VeraCrypt or BitLocker or FileVault or DiskCryptor or LUKS "
+or
+
+if not found go to
+
+Data Artifacts -> Installed Programs -> and search the above names in there
+
 
 ## Question 11: Size of pdf.pdf
 
@@ -216,11 +225,32 @@ Check file size in details pane or right-click → properties
 Use "File Types" → "Documents" → search by file name  
 Click on file `letterlegal5.doc`  
 In the table below, see in text header there is metadata written:  
-`meta:last-author: Randy Prakken`
+`meta:last-author: Jimmy Wilson`
 
 **Answer:**  
-`Randy Prakken`
+`Jimmy Wilson`
 
+## Question 13: Did you find the user (user-x), who is illegally selling credit cards , drivers licenses and green cards?
+
+Use "File Search" feature  
+In the search box at top right, type: "Credit"
+we will see many files location with name "Jimmy Wilson" so the user is that.
+
+## Question 14: How much did user-x charge for credit cards?
+
+Use "File Search" feature  
+In the search box at top right, type: "Credit Cards"
+we will see  files name "new price list" click it and see the ans.
+
+## Question 15: User-x has few clients.Find out the email addresses of them?
+
+Go to "Data Artifacts" → "Email Messages" -> see the subject column where it says about the credits,cards or list and analyse.
+
+## Question 16: Find out the social security number of terry ferry?
+
+Use "File Search" feature  
+In the search box at top right, type: "Ferry"
+and see the ans.
 
 ### Extra
 1. Location of the Event Logs: C:\WINDOWS\system32\winevt\Logs
