@@ -120,7 +120,7 @@ Navigate to registry hives
 Go to: Data Sources → Volume → Windows → System32 → config → SOFTWARE  
 Use Autopsy's registry viewer or:  
 Use "Keyword Search" to search for "RegisteredOwner"  
-Or  
+Than 
 Look in SOFTWARE registry hive at:  
 `Microsoft\Windows NT\CurrentVersion\RegisteredOwner`  
 Alternative method:  
@@ -128,7 +128,7 @@ Check "OS Account" in the left panel
 Or search for "RegisteredOwner" in keyword search.
 
 **Answer:**  
-`Randy Prakken`
+`Billy Bob`
 
 ---
 
@@ -157,11 +157,12 @@ Look at the file path to determine which user directory it's in
 The path will be: `C:\Users\[USERNAME]\...`
 
 **Answer:**  
-`Randy`
+`Jimmy Wilson`
 
 ---
 
-## last user login and date?
+## Question 7:Last user login and date?
+Go to OS Accounts on the left side and check all the users in tab and see details to see last login time.
 
 
 ## Question 8: USB Device Serial Number (Kingston DataTraveler)
