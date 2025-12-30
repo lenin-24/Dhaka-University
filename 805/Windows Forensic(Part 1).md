@@ -161,6 +161,9 @@ The path will be: `C:\Users\[USERNAME]\...`
 
 ---
 
+## last user login and date?
+
+
 ## Question 8: USB Device Serial Number (Kingston DataTraveler)
 
 **Steps:**
