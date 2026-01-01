@@ -1,38 +1,38 @@
-1. System: Computer Name
+### 1. System: Computer Name
    
 (C:\WINDOWS\system32\config\SYSTEM > ControlSet001 > Control > ComputerName)
 
-2. Time Zone:
+### 2. Time Zone:
 
 SYSTEM > ControlSet001 > Control > TimeZoneInformation
 
-3. IP Address:
+### 3. IP Address:
 
 SYSTEM\ControlSet001\Services\Tcpip\Parameters\Interfaces\{GUID}\DHCP IP
 
-4. Mounted Devices:
+### 4. Mounted Devices:
 
 C:\WINDOWS\system32\config\SYSTEM >MountedDevices
  
-5. Software: Operating System  Version
+### 5. Software: Operating System  Version
 
 (C:\WINDOWS\system32\config\, SOFTWARE > Microsoft > Windows NT > Current Version)
 
-6. Installed Applications:
+### 6. Installed Applications:
 
 If you want to find Installed Applications in Autopsy (from a Windows image), the correct registry path is:
 
 SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
 
-7. NTUSER.DAT: 
+### 7. NTUSER.DAT: 
 
 Search keyword > NTUSER.DAT; Recent documents (NTUSER.DAT\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs)
 
-8. event logs: WINDOWS\system32\winevt\Logs
+### 8. event logs: WINDOWS\system32\winevt\Logs
 
-9. SAM: C:\WINDOWS\system32\config\SAM > Domain > Account > Users
+### 9. SAM: C:\WINDOWS\system32\config\SAM > Domain > Account > Users
 
-10. System: C:\Windows\System32\Config\System; SYSTEM\CurrentControlSet001\Enum\USBSTOR
+### 10. System: C:\Windows\System32\Config\System; SYSTEM\CurrentControlSet001\Enum\USBSTOR
 
 
 ==================================================================================
