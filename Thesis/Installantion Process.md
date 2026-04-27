@@ -183,21 +183,6 @@ pingall
 
 ---
 
-*Last Updated: $(date)*  
-*Compatible with: Ubuntu 20.04 LTS / 22.04 LTS*
-```
 
----
 
-### 📋 How to Use:
-1. Copy the entire code block above
-2. Paste into a new file named `README.md` or `INSTALL.md`
-3. Commit to your GitHub repo:
-   ```bash
-   git add INSTALL.md
-   git commit -m "Add SDN installation guide"
-   git push
-   ```
-4. GitHub will automatically render the Markdown with proper formatting, syntax highlighting, and emoji support 🎉
 
-Let me know if you'd like me to add a table of contents, badges, or a license section!
