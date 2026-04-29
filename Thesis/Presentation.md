@@ -134,7 +134,7 @@ flowchart TD
 | Throughput | iperf | TCP |
 | Packet Loss | iperf | UDP |
 | Flow Setup Delay | Wireshark | OpenFlow |
-| CPU / Memory Usage | system stats | — |
+
 # ⚙️ 7. Experimental Design
 
 * Same topology for fairness
@@ -186,7 +186,11 @@ ELSE → normal operation
 * Packet loss
 * Flow setup time
 * Recovery time
-* CPU / Memory usage
+* SDN performance evaluation requires both data-plane packets (TCP/UDP/ICMP) and control-plane packets (OpenFlow)
+* TCP → Best for bulk data performance
+* UDP → Best for real-time performance
+* ICMP → Best for delay measurement
+* OpenFlow packets → Core SDN performance indicator
 
 ---
 
