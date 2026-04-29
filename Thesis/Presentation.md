@@ -46,6 +46,7 @@
 * Analyze and compare the performance of multiple open-source SDN controllers (Ryu, POX, Floodlight/OpenDaylight).
 * Implement SDN network topologies using Mininet.
 * Evaluate controller efficiency based on:
+
   *(1)Latency(RTT)
   *(2)Throughput
   *(3)Packet loss
