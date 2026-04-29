@@ -1,13 +1,11 @@
----
 members:
   - name: Syed Mahathir Md. Lenin
-    registration_number: H-408
-    contact_number: "01711313722"
+    reg: H-408
+    phone: "01711313722"
 
   - name: Suchayana Dey
-    registration_number: H-430
-    contact_number: "01949612685"
----
+    reg: H-430
+    phone: "01949612685"
 ---
 
 # 🎯 1. Title Slide
