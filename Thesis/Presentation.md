@@ -1,7 +1,7 @@
 members:
   - name: Syed Mahathir Md. Lenin
-    reg: H-408
-    phone: "01711313722"
+    * reg: H-408
+    * phone: "01711313722"
 
   - name: Suchayana Dey
     reg: H-430
