@@ -1,11 +1,11 @@
-members:
-  - name: Syed Mahathir Md. Lenin
+# Members:
+  - Name: Syed Mahathir Md. Lenin
     * reg: H-408
     * phone: "01711313722"
 
-  - name: Suchayana Dey
-    reg: H-430
-    phone: "01949612685"
+  - Name: Suchayana Dey
+    * reg: H-430
+    * phone: "01949612685"
 ---
 
 # 🎯 1. Title Slide
