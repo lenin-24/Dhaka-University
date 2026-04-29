@@ -52,22 +52,10 @@
 
 ---
 
-# 💡 5. Proposed Approach (High-Level Flow)
-
-Use a diagram if possible.
-
-Flow:
-
-1. Setup SDN environment
-2. Deploy controllers
-3. Generate traffic scenarios
-4. Collect metrics
-5. Apply adaptive logic (Ryu)
-6. Re-evaluate & compare
 
 ---
 
-# 🧱 6. System Design
+# 🧱 5. System Design
 
 
 
@@ -131,7 +119,7 @@ flowchart TD
 | Packet Loss | iperf | UDP |
 | Flow Setup Delay | Wireshark | OpenFlow |
 
-# ⚙️ 7. Experimental Design
+# ⚙️ 6. Experimental Design
 
 * Same topology for fairness
 * Multiple scales:
@@ -142,7 +130,7 @@ flowchart TD
 
 ---
 
-# 🧪 8. Test Scenarios
+# 🧪 7. Test Scenarios
 
 One slide, structured:
 
@@ -154,7 +142,7 @@ One slide, structured:
 
 ---
 
-# 🔧 9. Adaptive Mechanism (Core Contribution)
+# 🔧 8. Adaptive Mechanism (Core Contribution)
 
 Explain clearly:
 
@@ -175,7 +163,7 @@ ELSE → normal operation
 
 ---
 
-# 📊 10. Performance Metrics
+# 📊 9. Performance Metrics
 
 * SDN performance evaluation requires both data-plane packets (TCP/UDP/ICMP) and control-plane packets (OpenFlow)
 * Latency
@@ -193,7 +181,7 @@ ELSE → normal operation
 
 ---
 
-# 📈 11. Evaluation Plan
+# 📈 10. Evaluation Plan
 
 * Compare:
 
@@ -207,7 +195,7 @@ ELSE → normal operation
 
 ---
 
-# 🧾 12. Expected Results
+# 🧾 11. Expected Results
 
 * Performance degradation under stress
 * Differences between controllers
@@ -217,7 +205,7 @@ ELSE → normal operation
 
 ---
 
-# 🗺️ 13. Work Plan / Timeline
+# 🗺️ 12. Work Plan / Timeline
 
 Break into phases:
 
@@ -231,7 +219,7 @@ Break into phases:
 
 ---
 
-# ⚠️ 14. Challenges & Risks
+# ⚠️ 13. Challenges & Risks
 
 * Tool compatibility issues
 * Controller setup complexity
@@ -242,12 +230,12 @@ Break into phases:
 
 ---
 
-# 🏁 15. Conclusion
+# 🏁 14. Conclusion
 
 
 ---
 
-# 🎤 16. Q&A Slide
+# 🎤 15. Q&A Slide
 
 
 
