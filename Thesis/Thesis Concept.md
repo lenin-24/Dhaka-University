@@ -1,9 +1,9 @@
-# ⚙️ What Makes YOUR Project Special
+# ⚙️ What Makes the Project Special
 
-You’re not just testing. You are also:
+We’re not just testing. We are also:
 👉 **Improving one controller (Ryu)**
 
-So your project has two parts:
+So the project has two parts:
 1. Compare controllers
 2. Improve one and prove it works better
 
@@ -20,9 +20,9 @@ Imagine: `1000 users` suddenly send requests → **Controller gets flooded**
 
 ---
 
-## ⚙️ Your Small Innovation (Important)
+## ⚙️ Our Small Innovation (Important)
 
-You add logic like:
+Add logic like:
 ```text
 If traffic is too high:
   → don't process everything instantly
@@ -33,7 +33,7 @@ If traffic is too high:
 
 ---
 
-## 🧪 How Your Experiment Works (Step-by-Step)
+## 🧪 How the Experiment Works (Step-by-Step)
 
 ### Step 1: Build Network
 Using `Mininet`:
@@ -49,21 +49,21 @@ Run each controller:
 - `OpenDaylight`
 
 ### Step 3: Run Tests
-You simulate:
+Simulate:
 - ✅ **Normal traffic** → everything is stable
 - ✅ **Heavy traffic** → increase load gradually
 - ✅ **Sudden spike** → simulate attack-like burst
 - ✅ **Failure** → disconnect link
 
 ### Step 4: Measure Performance
-You collect:
+Collect:
 - ⏱️ Delay (latency)
 - 📈 Speed (throughput)
 - 📦 Packet loss
 - 🔁 Recovery time
 
 ### Step 5: Modify Ryu
-You add your adaptive logic:
+Add adaptive logic:
 - Detect high traffic
 - Limit processing
 - Optimize flow installation
@@ -71,31 +71,21 @@ You add your adaptive logic:
 ### Step 6: Compare Results
 👉 This is your main proof:
 
-| Scenario      | Normal Ryu | Modified Ryu |
-|---------------|------------|--------------|
+| Scenario          | Normal Ryu | Modified Ryu |
+|-------------------|--------|--------------|
 | **High Load**     | Slow       | Faster       |
 | **Packet Loss**   | High       | Lower        |
 | **Response**      | Delayed    | Stable       |
 
 ---
 
-## 📊 What You Are Trying to Prove
+## 📊 What we Are Trying to Prove
 
-You want to show:
+ want to show:
 - Controllers behave differently under stress
 - Performance drops in bad conditions
 - Your improvement helps reduce the problem
 
 ---
 
-## 🎯 What Is This Project FOR?
 
-This is important. This project is useful for:
-
-- ✅ **Research** → publishable experiment
-- ✅ **Industry Relevance** → real networks face these issues daily
-- ✅ **Your Career** → demonstrates:
-  - Networking knowledge
-  - System design
-  - Performance analysis
-  - Problem solving
