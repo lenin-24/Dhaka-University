@@ -43,12 +43,10 @@
 
 # 🎯 4. Research Objectives
 
-Keep it crisp and measurable:
-
-* Evaluate performance of multiple SDN controllers
-* Analyze behavior under dynamic scenarios
-* Design a lightweight adaptive mechanism
-* Compare default vs improved controller performance
+* Analyze and compare the performance of multiple open-source SDN controllers (Ryu, POX, Floodlight/OpenDaylight).
+* Implement SDN network topologies using Mininet.
+* Evaluate controller efficiency based on: (1)Latency(RTT) (2)Throughput (3)Packet loss (4)Flow setup time *Monitor ICMP,TCP Packet ,UDP Packet OpenFlow traffic using Wireshark. 
+* Identify the most suitable controller for scalable and efficient network environments.
 
 ---
 
