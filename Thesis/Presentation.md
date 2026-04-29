@@ -73,19 +73,115 @@ Flow:
 
 # 🧱 6. System Architecture
 
-Show components:
-
-* Mininet (network emulator)
-* Controllers:
-
-  * Ryu
-  * POX
-  * Floodlight
-  * OpenDaylight
-* Monitoring tools (Wireshark, system stats)
-
-👉 A block diagram here is very powerful
-
+┌─────────────────────────────────────┐
+│             Start Project           │
+└──────────────────┬──────────────────┘
+│
+▼
+┌─────────────────────────────────────┐
+│         Setup Environment           │
+│    (Mininet + All SDN Controllers)  │
+└──────────────────┬──────────────────┘
+│
+▼
+┌─────────────────────────────────────┐
+│          Create Topology            │
+│   Mininet Custom (Small/Med/Large)  │
+└──────────────────┬──────────────────┘
+│
+▼
+┌─────────────────────────────────────┐
+│         Select Controller           │
+└──────┬──────────┬──────────┬────────┘
+│          │          │          │
+▼          ▼          ▼          ▼
+┌──────────┐ ┌────────┐ ┌──────────┐ ┌────────────────┐
+│ Modified │ │  POX   │ │Floodlight│ │ OpenDaylight   │
+│ Ryu ★   │ │        │ │          │ │                │
+│(Adaptive)│ │Default │ │ Default  │ │    Default     │
+└────┬─────┘ └───┬────┘ └────┬─────┘ └───────┬────────┘
+└───────────┴───────────┴───────────────┘
+│
+▼
+┌─────────────────────────────────────┐
+│       Connect to Mininet            │
+│  (Remote Controller via OpenFlow)   │
+└──────────────────┬──────────────────┘
+│
+▼
+┌─────────────────────────────────────┐
+│      Generate Traffic Scenarios     │
+│  Baseline · Load · Spike · Failure  │
+└──────────────────┬──────────────────┘
+│
+▼
+┌─────────────────────────────────────┐
+│          Capture Packets            │
+│   Wireshark: OpenFlow, TCP, UDP     │
+└──────────────────┬──────────────────┘
+│
+▼
+┌─────────────────────────────────────┐
+│        Measure Performance          │
+│  • Latency (ICMP)                   │
+│  • Throughput (TCP)                 │
+│  • Packet Loss (UDP)                │
+│  • Flow Setup Delay (OpenFlow)      │
+│  • CPU / Memory Usage               │
+└──────────────────┬──────────────────┘
+│
+▼
+┌─────────────────────────────────────┐
+│     Store Results (Logs/Tables)     │
+└──────────────────┬──────────────────┘
+│
+▼
+┌───────────────┐
+│ More          │ ── Yes ──► (back to Select Controller)
+│ controllers?  │
+└───────┬───────┘
+│ No
+▼
+╔═════════════════════════════════════╗
+║   ★ CORE CONTRIBUTION (Adaptive)   ║
+╠═════════════════════════════════════╣
+║   Apply Adaptive Logic (Ryu)        ║
+║   Rate limiting + flow batching     ║
+║                                     ║
+║   IF load > threshold:              ║
+║     → control traffic (rate limit)  ║
+║   ELSE:                             ║
+║     → normal operation              ║
+╚══════════════════╤══════════════════╝
+│
+▼
+┌─────────────────────────────────────┐
+│      Re-run Traffic Scenarios       │
+│   (Same conditions, Modified Ryu)   │
+└──────────────────┬──────────────────┘
+│
+▼
+┌─────────────────────────────────────┐
+│   Compare: Default vs Adaptive Ryu  │
+│       Graphs · Tables · Metrics     │
+└──────────────────┬──────────────────┘
+│
+▼
+┌─────────────────────────────────────┐
+│       Compare All Controllers       │
+│      Cross-controller analysis      │
+└──────────────────┬──────────────────┘
+│
+▼
+┌─────────────────────────────────────┐
+│      Final Results & Conclusion     │
+│    Evaluation report & findings     │
+└──────────────────┬──────────────────┘
+│
+▼
+┌─────────────────────────────────────┐
+│                End                  │
+└─────────────────────────────────────┘
 ---
 
 # ⚙️ 7. Experimental Design
