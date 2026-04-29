@@ -171,7 +171,7 @@ IF load > threshold → control traffic
 ELSE → normal operation
 ```
 
-👉 This slide is **critical** — this is your originality
+
 
 ---
 
@@ -213,7 +213,7 @@ ELSE → normal operation
 * Differences between controllers
 * Improved efficiency with adaptive Ryu
 
-👉 Keep realistic, not exaggerated
+
 
 ---
 
@@ -238,7 +238,7 @@ Break into phases:
 * Accurate metric collection
 * Resource limitations (VM performance)
 
-👉 This shows maturity
+
 
 ---
 
