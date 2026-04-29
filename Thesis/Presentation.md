@@ -49,8 +49,8 @@
 
   * (1)Latency(RTT)
   * (2)Throughput
-  (3)Packet loss
-  (4)Flow setup time
+  (3) Packet loss
+  (4 )Flow setup time
 *Monitor ICMP,TCP Packet ,UDP Packet OpenFlow traffic using Wireshark. 
 * Identify the most suitable controller for scalable and efficient network environments.
 
