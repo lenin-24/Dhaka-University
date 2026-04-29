@@ -47,10 +47,10 @@
 * Implement SDN network topologies using Mininet.
 * Evaluate controller efficiency based on:
 
-  * (1)Latency(RTT)
-  * (2)Throughput
-  (3) Packet loss
-  (4 )Flow setup time
+  * Latency(RTT)
+  * Throughput
+  * Packet loss
+  * Flow setup time
 *Monitor ICMP,TCP Packet ,UDP Packet OpenFlow traffic using Wireshark. 
 * Identify the most suitable controller for scalable and efficient network environments.
 
