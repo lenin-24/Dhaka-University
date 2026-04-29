@@ -181,16 +181,19 @@ ELSE → normal operation
 
 # 📊 10. Performance Metrics
 
+* SDN performance evaluation requires both data-plane packets (TCP/UDP/ICMP) and control-plane packets (OpenFlow)
 * Latency
+  * ICMP → Best for delay measurement
 * Throughput
+  * TCP → Best for bulk data performance
 * Packet loss
+   * UDP → Best for real-time performance
 * Flow setup time
 * Recovery time
-* SDN performance evaluation requires both data-plane packets (TCP/UDP/ICMP) and control-plane packets (OpenFlow)
-* TCP → Best for bulk data performance
-* UDP → Best for real-time performance
-* ICMP → Best for delay measurement
 * OpenFlow packets → Core SDN performance indicator
+
+
+
 
 ---
 
