@@ -1,26 +1,24 @@
+---
+# 0. Members
+Syed Mahathir Md. Lenin
+Registration number: H-408
+Contact number: 01711313722
+
+Suchayana Dey
+Registration number: H-430
+Contact number: 01949612685
 
 ---
 
 # 🎯 1. Title Slide
 
-* Project Title
-* Your Name
-* Program (MSc in Information & Cyber Security)
-* Supervisor Name
-* Date
+Performance and Resilience Evaluation of Heterogeneous SDN Controllers
 
 ---
 
 # 🧭 2. Motivation & Background
 
-* What is SDN (1–2 lines)
-* Role of controllers (control plane separation)
-* Problem with current evaluations:
 
-  * Mostly static conditions
-  * Not realistic
-
-👉 Goal: Show *why this research matters*
 
 ---
 
@@ -248,17 +246,12 @@ Break into phases:
 
 # 🏁 15. Conclusion
 
-* Restate:
-
-  * What you will do
-  * Why it matters
-  * Expected contribution
 
 ---
 
 # 🎤 16. Q&A Slide
 
-Simple:
+
 
 > “Thank You — Questions?”
 
