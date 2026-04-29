@@ -71,119 +71,70 @@ Flow:
 
 ---
 
-# 🧱 6. System Architecture
+# 🧱 6. System Design
 
-┌─────────────────────────────────────┐
-│             Start Project           │
-└──────────────────┬──────────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│         Setup Environment           │
-│    (Mininet + All SDN Controllers)  │
-└──────────────────┬──────────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│          Create Topology            │
-│   Mininet Custom (Small/Med/Large)  │
-└──────────────────┬──────────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│         Select Controller           │
-└──────┬──────────┬──────────┬────────┘
-│          │          │          │
-▼          ▼          ▼          ▼
-┌──────────┐ ┌────────┐ ┌──────────┐ ┌────────────────┐
-│ Modified │ │  POX   │ │Floodlight│ │ OpenDaylight   │
-│ Ryu ★   │ │        │ │          │ │                │
-│(Adaptive)│ │Default │ │ Default  │ │    Default     │
-└────┬─────┘ └───┬────┘ └────┬─────┘ └───────┬────────┘
-└───────────┴───────────┴───────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│       Connect to Mininet            │
-│  (Remote Controller via OpenFlow)   │
-└──────────────────┬──────────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│      Generate Traffic Scenarios     │
-│  Baseline · Load · Spike · Failure  │
-└──────────────────┬──────────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│          Capture Packets            │
-│   Wireshark: OpenFlow, TCP, UDP     │
-└──────────────────┬──────────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│        Measure Performance          │
-│  • Latency (ICMP)                   │
-│  • Throughput (TCP)                 │
-│  • Packet Loss (UDP)                │
-│  • Flow Setup Delay (OpenFlow)      │
-│  • CPU / Memory Usage               │
-└──────────────────┬──────────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│     Store Results (Logs/Tables)     │
-└──────────────────┬──────────────────┘
-│
-▼
-┌───────────────┐
-│ More          │ ── Yes ──► (back to Select Controller)
-│ controllers?  │
-└───────┬───────┘
-│ No
-▼
-╔═════════════════════════════════════╗
-║   ★ CORE CONTRIBUTION (Adaptive)   ║
-╠═════════════════════════════════════╣
-║   Apply Adaptive Logic (Ryu)        ║
-║   Rate limiting + flow batching     ║
-║                                     ║
-║   IF load > threshold:              ║
-║     → control traffic (rate limit)  ║
-║   ELSE:                             ║
-║     → normal operation              ║
-╚══════════════════╤══════════════════╝
-│
-▼
-┌─────────────────────────────────────┐
-│      Re-run Traffic Scenarios       │
-│   (Same conditions, Modified Ryu)   │
-└──────────────────┬──────────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│   Compare: Default vs Adaptive Ryu  │
-│       Graphs · Tables · Metrics     │
-└──────────────────┬──────────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│       Compare All Controllers       │
-│      Cross-controller analysis      │
-└──────────────────┬──────────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│      Final Results & Conclusion     │
-│    Evaluation report & findings     │
-└──────────────────┬──────────────────┘
-│
-▼
-┌─────────────────────────────────────┐
-│                End                  │
-└─────────────────────────────────────┘
----
+# SDN Controller Evaluation — Research Flowchart
 
+```mermaid
+flowchart TD
+    A([Start Project]) --> B
+
+    B[Setup Environment\nMininet + All SDN Controllers] --> C
+    C[Create Topology\nMininet Custom - Small / Med / Large] --> D
+    D[Select Controller] --> E1 & E2 & E3 & E4
+
+    E1["⭐ Modified Ryu\nAdaptive Logic"]:::coral
+    E2[POX\nDefault]:::teal
+    E3[Floodlight\nDefault]:::teal
+    E4[OpenDaylight\nDefault]:::teal
+
+    E1 & E2 & E3 & E4 --> F
+
+    F[Connect to Mininet\nRemote Controller via OpenFlow] --> G
+    G[Generate Traffic Scenarios\nBaseline · Load · Spike · Failure] --> H
+    H[Capture Packets\nWireshark: OpenFlow, TCP, UDP] --> I
+    I[Measure Performance\nLatency · Throughput · Packet Loss\nFlow Setup Delay · CPU/Mem Usage] --> J
+    J[Store Results\nLogs / Tables] --> K
+
+    K{More Controllers?}
+    K -- Yes --> D
+    K -- No --> L
+
+    subgraph ADAPTIVE ["⭐ Core Contribution — Adaptive Mechanism"]
+        L["Apply Adaptive Logic - Ryu\nRate limiting + flow batching\n\nIF load > threshold → control traffic\nELSE → normal operation"]:::coral
+        L --> M
+        M["Re-run Traffic Scenarios\nSame conditions, Modified Ryu"]:::coral
+    end
+
+    M --> N
+    N[Compare: Default vs Adaptive Ryu\nGraphs · Tables · Metrics] --> O
+    O[Compare All Controllers\nCross-controller analysis] --> P
+    P[Final Results & Conclusion\nEvaluation report & findings] --> Q
+
+    Q([End])
+
+    classDef coral fill:#F0997B,stroke:#993C1D,color:#4A1B0C
+    classDef teal  fill:#5DCAA5,stroke:#0F6E56,color:#04342C
+```
+
+## Controllers Evaluated
+
+| Controller | Type | Notes |
+|---|---|---|
+| **Modified Ryu ⭐** | Adaptive | Rate limiting + flow batching — original contribution |
+| POX | Baseline | Default OpenFlow controller |
+| Floodlight | Baseline | Default OpenFlow controller |
+| OpenDaylight | Baseline | Default OpenFlow controller |
+
+## Performance Metrics
+
+| Metric | Tool | Protocol |
+|---|---|---|
+| Latency | ping | ICMP |
+| Throughput | iperf | TCP |
+| Packet Loss | iperf | UDP |
+| Flow Setup Delay | Wireshark | OpenFlow |
+| CPU / Memory Usage | system stats | — |
 # ⚙️ 7. Experimental Design
 
 * Same topology for fairness
