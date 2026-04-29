@@ -51,7 +51,7 @@
   * Throughput
   * Packet loss
   * Flow setup time
-*Monitor ICMP,TCP Packet ,UDP Packet OpenFlow traffic using Wireshark. 
+* Monitor ICMP,TCP Packet ,UDP Packet OpenFlow traffic using Wireshark. 
 * Identify the most suitable controller for scalable and efficient network environments.
 
 ---
