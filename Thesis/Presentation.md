@@ -8,7 +8,7 @@
     * Phone: "01949612685"
 ---
 
-# Security-Aware Performance and Resilience Evaluation of Heterogeneous SDN Controllers under Dynamic and Adversarial Network Conditions with Adaptive Flow Management
+# Security-Aware Evaluation of SDN Controllers under Dynamic and Adversarial Conditions
 
 ## Research Domain
 - Software Defined Networking (SDN)
