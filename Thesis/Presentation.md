@@ -8,239 +8,100 @@
     * Phone: "01949612685"
 ---
 
-# 🎯 1. Title Slide
+# Security-Aware Performance and Resilience Evaluation of Heterogeneous SDN Controllers under Dynamic and Adversarial Network Conditions with Adaptive Flow Management
 
-### Performance and Resilience Evaluation of Heterogeneous SDN Controllers
-
----
-
-# 🧭 2. Motivation & Background
-
-
+## Research Domain
+- Software Defined Networking (SDN)
+- Network Security & Cybersecurity
+- Network Resilience
+- Telecom Network Engineering
 
 ---
 
-# ❗ 3. Problem Statement
+## Introduction
+Software Defined Networking (SDN) has transformed modern network architecture by separating the control plane from the data plane, enabling centralized network management, programmability, and dynamic traffic control. SDN controllers such as Ryu, POX, Floodlight, and OpenDaylight are responsible for managing network behavior and forwarding decisions. Although SDN offers flexibility and scalability, the centralized nature of controllers introduces performance and security challenges.
 
-* Existing studies:
+Most existing studies evaluate SDN controllers only under stable and normal traffic conditions. However, real-world enterprise and telecom networks frequently experience dynamic traffic changes, congestion, link failures, and cyberattacks such as Distributed Denial of Service (DDoS) and packet-in flooding attacks. Under such conditions, SDN controllers may suffer from increased latency, packet loss, controller overload, degraded throughput, and delayed recovery.
 
-  * Focus on stable networks
-* Real-world networks:
-
-  * Dynamic traffic
-  * Failures
-  * Congestion
-
-**Key gap:**
-
-> Lack of performance evaluation under dynamic conditions + lack of adaptive handling
+Therefore, there is a need to evaluate controller behavior under both dynamic and adversarial environments and to explore lightweight adaptive mechanisms that can improve controller resilience and security performance. This research proposes a comparative performance and security evaluation of multiple SDN controllers under dynamic network conditions and attack scenarios. Additionally, the research introduces an adaptive security-aware flow management mechanism implemented in the Ryu controller to improve responsiveness and resilience during abnormal traffic conditions.
 
 ---
 
-# 🎯 4. Research Objectives
+## Problem Statement
+Existing SDN controller evaluation studies primarily focus on performance benchmarking under stable network environments. However, modern networks, especially telecom and enterprise infrastructures, operate in highly dynamic and adversarial conditions involving traffic congestion, link failures, sudden traffic spikes, and cyberattacks. Current SDN controllers may experience:
+- Control-plane saturation
+- Delayed flow setup
+- High packet loss
+- Increased latency
+- Reduced throughput
+- Slow recovery during attacks or network failures
 
-* Analyze and compare the performance of multiple open-source SDN controllers (Ryu, POX, Floodlight/OpenDaylight).
-* Implement SDN network topologies using Mininet.
-* Evaluate controller efficiency based on:
-
-  * Latency(RTT)
-  * Throughput
-  * Packet loss
-  * Flow setup time
-* Monitor ICMP,TCP Packet ,UDP Packet OpenFlow traffic using Wireshark. 
-* Identify the most suitable controller for scalable and efficient network environments.
+There is a lack of comparative research evaluating heterogeneous SDN controllers under both dynamic and malicious conditions while also investigating lightweight adaptive mechanisms for improving controller resilience and security performance.
 
 ---
 
-
-
-
-# 🧱 5. System Design
-
-
-
-```mermaid
-flowchart TD
-    A([Start Project]) --> B
-
-    B[Setup Environment\nMininet + All SDN Controllers] --> C
-    C[Create Topology\nMininet Custom - Small / Med / Large] --> D
-    D[Select Controller] --> E1 & E2 & E3 & E4
-
-    E1["⭐ Modified Ryu\nAdaptive Logic"]:::coral
-    E2[POX\nDefault]:::teal
-    E3[Floodlight\nDefault]:::teal
-    E4[OpenDaylight\nDefault]:::teal
-
-    E1 & E2 & E3 & E4 --> F
-
-    F[Connect to Mininet\nRemote Controller via OpenFlow] --> G
-    G[Generate Traffic Scenarios\nBaseline · Load · Spike · Failure] --> H
-    H[Capture Packets\nWireshark: OpenFlow, TCP, UDP] --> I
-    I[Measure Performance\nLatency · Throughput · Packet Loss\nFlow Setup Delay · CPU/Mem Usage] --> J
-    J[Store Results\nLogs / Tables] --> K
-
-    K{More Controllers?}
-    K -- Yes --> D
-    K -- No --> L
-
-    subgraph ADAPTIVE ["⭐ Core Contribution — Adaptive Mechanism"]
-        L["Apply Adaptive Logic - Ryu\nRate limiting + flow batching\n\nIF load > threshold → control traffic\nELSE → normal operation"]:::coral
-        L --> M
-        M["Re-run Traffic Scenarios\nSame conditions, Modified Ryu"]:::coral
-    end
-
-    M --> N
-    N[Compare: Default vs Adaptive Ryu\nGraphs · Tables · Metrics] --> O
-    O[Compare All Controllers\nCross-controller analysis] --> P
-    P[Final Results & Conclusion\nEvaluation report & findings] --> Q
-
-    Q([End])
-
-    classDef coral fill:#F0997B,stroke:#993C1D,color:#4A1B0C
-    classDef teal  fill:#5DCAA5,stroke:#0F6E56,color:#04342C
-```
-
-## Controllers Evaluated
-
-| Controller | Type | Notes |
-|---|---|---|
-| **Modified Ryu ⭐** | Adaptive | Rate limiting + flow batching — original contribution |
-| POX | Baseline | Default OpenFlow controller |
-| Floodlight | Baseline | Default OpenFlow controller |
-| OpenDaylight | Baseline | Default OpenFlow controller |
-
-## Performance Metrics
-
-| Metric | Tool | Protocol |
-|---|---|---|
-| Latency | ping | ICMP |
-| Throughput | iperf | TCP |
-| Packet Loss | iperf | UDP |
-| Flow Setup Delay | Wireshark | OpenFlow |
-
-# ⚙️ 6. Experimental Design
-
-* Same topology for fairness
-* Multiple scales:
-
-  * Small
-  * Medium
-  * Large
+## Research Aim
+The aim of this research is to evaluate the performance, resilience, and security behavior of heterogeneous SDN controllers under dynamic and adversarial network conditions and to develop an adaptive flow management mechanism that enhances controller performance during high-load and attack scenarios.
 
 ---
 
-# 🧪 7. Test Scenarios
+## Research Objectives
 
-One slide, structured:
-
-* Baseline (normal traffic)
-* Increasing load
-* Traffic spike / congestion
-* Link failure
-* Adaptive controller test
-
----
-
-# 🔧 8. Adaptive Mechanism (Core Contribution)
-
-Explain clearly:
-
-* Problem: too many packet-in requests
-* Solution:
-
-  * Rate limiting
-  * Flow batching
-
-Show pseudo-logic:
-
-```
-IF load > threshold → control traffic
-ELSE → normal operation
-```
-
-
+### Primary Objectives
+1. Evaluate and compare the performance of multiple SDN controllers under identical network environments.
+2. Analyze controller behavior under dynamic network conditions including:
+   - Increasing traffic load
+   - Congestion
+   - Traffic bursts
+   - Link failures
+3. Evaluate controller resilience under adversarial conditions such as:
+   - Packet-in flooding attacks
+   - DDoS traffic bursts
+   - Malicious flow generation
+4. Design and implement an adaptive security-aware flow management mechanism in the Ryu SDN controller.
+5. Compare the default Ryu controller with the modified adaptive Ryu controller under stress and attack conditions.
+6. Analyze how adaptive flow management improves network stability, controller responsiveness, and attack resilience.
 
 ---
 
-# 📊 9. Performance Metrics
-
-* SDN performance evaluation requires both data-plane packets (TCP/UDP/ICMP) and control-plane packets (OpenFlow)
-* Latency
-  * ICMP → Best for delay measurement
-* Throughput
-  * TCP → Best for bulk data performance
-* Packet loss
-   * UDP → Best for real-time performance
-* Flow setup time
-* Recovery time
-* OpenFlow packets → Core SDN performance indicator
-
-
-
+## Research Questions
+1. How do different SDN controllers perform under dynamic network conditions?
+2. Which SDN controller provides better scalability and resilience during congestion and failures?
+3. How do SDN controllers behave under adversarial traffic conditions such as packet-in flooding and DDoS attacks?
+4. Can a lightweight adaptive flow management mechanism improve controller performance and resilience under attack scenarios?
+5. What trade-offs exist between controller performance, scalability, and security resilience?
 
 ---
 
-# 📈 10. Evaluation Plan
+## Proposed Contribution
+This research contributes in four major areas:
 
-* Compare:
-
-  * Controller vs Controller
-  * Default Ryu vs Modified Ryu
-
-* Visualization:
-
-  * Graphs
-  * Tables
-
----
-
-# 🧾 11. Expected Results
-
-* Performance degradation under stress
-* Differences between controllers
-* Improved efficiency with adaptive Ryu
-
-
+1. **Comparative SDN Controller Evaluation**  
+   A detailed comparison of multiple heterogeneous SDN controllers under identical experimental conditions.
+2. **Dynamic Network Testing**  
+   Evaluation beyond traditional static benchmarking through realistic dynamic scenarios.
+3. **Security-Aware Stress Analysis**  
+   Investigation of SDN controller behavior under adversarial and attack-oriented traffic conditions.
+4. **Adaptive Security-Aware Flow Management**  
+   Development of a lightweight adaptive mechanism within the Ryu controller capable of:
+   - Detecting abnormal packet-in behavior
+   - Mitigating controller overload
+   - Prioritizing legitimate traffic
+   - Improving resilience during attacks
 
 ---
 
-# 🗺️ 12. Work Plan / Timeline
+## Proposed Adaptive Mechanism
+The proposed mechanism will monitor controller packet-in request rates and dynamically adjust flow handling behavior.
 
-Break into phases:
-
-1. Literature Review
-2. Environment Setup
-3. Controller Integration
-4. Scenario Implementation
-5. Adaptive Logic Development
-6. Testing & Data Collection
-7. Analysis & Writing
-
----
-
-# ⚠️ 13. Challenges & Risks
-
-* Tool compatibility issues
-* Controller setup complexity
-* Accurate metric collection
-* Resource limitations (VM performance)
-
-
-
----
-
-# 🏁 14. Conclusion
-
-
----
-
-# 🎤 15. Q&A Slide
-
-
-
-> “Thank You — Questions?”
-
----
+### Conceptual Logic
+```python
+IF packet_in_rate > threshold:
+    classify traffic priority
+    apply rate limiting
+    reduce excessive flow installations
+    temporarily deprioritize suspicious flows
+ELSE:
+    normal processing
 
 
