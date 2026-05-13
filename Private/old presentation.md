@@ -1,0 +1,246 @@
+# Members:
+  - Name: Syed Mahathir Md. Lenin
+    * Reg: H-408
+    * Phone: "01711313722"
+
+  - Name: Suchayana Dey
+    * Reg: H-430
+    * Phone: "01949612685"
+---
+
+# 🎯 1. Title Slide
+
+### Performance and Resilience Evaluation of Heterogeneous SDN Controllers
+
+---
+
+# 🧭 2. Motivation & Background
+
+
+
+---
+
+# ❗ 3. Problem Statement
+
+* Existing studies:
+
+  * Focus on stable networks
+* Real-world networks:
+
+  * Dynamic traffic
+  * Failures
+  * Congestion
+
+**Key gap:**
+
+> Lack of performance evaluation under dynamic conditions + lack of adaptive handling
+
+---
+
+# 🎯 4. Research Objectives
+
+* Analyze and compare the performance of multiple open-source SDN controllers (Ryu, POX, Floodlight/OpenDaylight).
+* Implement SDN network topologies using Mininet.
+* Evaluate controller efficiency based on:
+
+  * Latency(RTT)
+  * Throughput
+  * Packet loss
+  * Flow setup time
+* Monitor ICMP,TCP Packet ,UDP Packet OpenFlow traffic using Wireshark. 
+* Identify the most suitable controller for scalable and efficient network environments.
+
+---
+
+
+
+
+# 🧱 5. System Design
+
+
+
+```mermaid
+flowchart TD
+    A([Start Project]) --> B
+
+    B[Setup Environment\nMininet + All SDN Controllers] --> C
+    C[Create Topology\nMininet Custom - Small / Med / Large] --> D
+    D[Select Controller] --> E1 & E2 & E3 & E4
+
+    E1["⭐ Modified Ryu\nAdaptive Logic"]:::coral
+    E2[POX\nDefault]:::teal
+    E3[Floodlight\nDefault]:::teal
+    E4[OpenDaylight\nDefault]:::teal
+
+    E1 & E2 & E3 & E4 --> F
+
+    F[Connect to Mininet\nRemote Controller via OpenFlow] --> G
+    G[Generate Traffic Scenarios\nBaseline · Load · Spike · Failure] --> H
+    H[Capture Packets\nWireshark: OpenFlow, TCP, UDP] --> I
+    I[Measure Performance\nLatency · Throughput · Packet Loss\nFlow Setup Delay · CPU/Mem Usage] --> J
+    J[Store Results\nLogs / Tables] --> K
+
+    K{More Controllers?}
+    K -- Yes --> D
+    K -- No --> L
+
+    subgraph ADAPTIVE ["⭐ Core Contribution — Adaptive Mechanism"]
+        L["Apply Adaptive Logic - Ryu\nRate limiting + flow batching\n\nIF load > threshold → control traffic\nELSE → normal operation"]:::coral
+        L --> M
+        M["Re-run Traffic Scenarios\nSame conditions, Modified Ryu"]:::coral
+    end
+
+    M --> N
+    N[Compare: Default vs Adaptive Ryu\nGraphs · Tables · Metrics] --> O
+    O[Compare All Controllers\nCross-controller analysis] --> P
+    P[Final Results & Conclusion\nEvaluation report & findings] --> Q
+
+    Q([End])
+
+    classDef coral fill:#F0997B,stroke:#993C1D,color:#4A1B0C
+    classDef teal  fill:#5DCAA5,stroke:#0F6E56,color:#04342C
+```
+
+## Controllers Evaluated
+
+| Controller | Type | Notes |
+|---|---|---|
+| **Modified Ryu ⭐** | Adaptive | Rate limiting + flow batching — original contribution |
+| POX | Baseline | Default OpenFlow controller |
+| Floodlight | Baseline | Default OpenFlow controller |
+| OpenDaylight | Baseline | Default OpenFlow controller |
+
+## Performance Metrics
+
+| Metric | Tool | Protocol |
+|---|---|---|
+| Latency | ping | ICMP |
+| Throughput | iperf | TCP |
+| Packet Loss | iperf | UDP |
+| Flow Setup Delay | Wireshark | OpenFlow |
+
+# ⚙️ 6. Experimental Design
+
+* Same topology for fairness
+* Multiple scales:
+
+  * Small
+  * Medium
+  * Large
+
+---
+
+# 🧪 7. Test Scenarios
+
+One slide, structured:
+
+* Baseline (normal traffic)
+* Increasing load
+* Traffic spike / congestion
+* Link failure
+* Adaptive controller test
+
+---
+
+# 🔧 8. Adaptive Mechanism (Core Contribution)
+
+Explain clearly:
+
+* Problem: too many packet-in requests
+* Solution:
+
+  * Rate limiting
+  * Flow batching
+
+Show pseudo-logic:
+
+```
+IF load > threshold → control traffic
+ELSE → normal operation
+```
+
+
+
+---
+
+# 📊 9. Performance Metrics
+
+* SDN performance evaluation requires both data-plane packets (TCP/UDP/ICMP) and control-plane packets (OpenFlow)
+* Latency
+  * ICMP → Best for delay measurement
+* Throughput
+  * TCP → Best for bulk data performance
+* Packet loss
+   * UDP → Best for real-time performance
+* Flow setup time
+* Recovery time
+* OpenFlow packets → Core SDN performance indicator
+
+
+
+
+---
+
+# 📈 10. Evaluation Plan
+
+* Compare:
+
+  * Controller vs Controller
+  * Default Ryu vs Modified Ryu
+
+* Visualization:
+
+  * Graphs
+  * Tables
+
+---
+
+# 🧾 11. Expected Results
+
+* Performance degradation under stress
+* Differences between controllers
+* Improved efficiency with adaptive Ryu
+
+
+
+---
+
+# 🗺️ 12. Work Plan / Timeline
+
+Break into phases:
+
+1. Literature Review
+2. Environment Setup
+3. Controller Integration
+4. Scenario Implementation
+5. Adaptive Logic Development
+6. Testing & Data Collection
+7. Analysis & Writing
+
+---
+
+# ⚠️ 13. Challenges & Risks
+
+* Tool compatibility issues
+* Controller setup complexity
+* Accurate metric collection
+* Resource limitations (VM performance)
+
+
+
+---
+
+# 🏁 14. Conclusion
+
+
+---
+
+# 🎤 15. Q&A Slide
+
+
+
+> “Thank You — Questions?”
+
+---
+
+
