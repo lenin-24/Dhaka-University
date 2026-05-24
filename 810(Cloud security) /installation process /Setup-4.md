@@ -1,11 +1,36 @@
 # Configuring Ubuntu Server (Static IP, SSH, Updates)
 
 
-## 3. Step-by-Step: Configure Static IP Address
+##  Step-by-Step: Configure Static IP Address
 
 > 💡 **Purpose**: Assigning a static IP to `ens33` ensures your OpenStack VM is always reachable at `192.168.66.3` for SSH, API access, and Kolla-Ansible deployment.
 
 ---
+
+
+
+
+### Setup Instructions
+
+70. Download **Solar-PuTTY** from: [https://www.solarwinds.com/free-tools/solar-putty](https://www.solarwinds.com/free-tools/solar-putty)
+71. Extract the downloaded ZIP file to a folder (e.g., `C:\Tools\Solar-PuTTY`)
+72. Run `Solar-PuTTY.exe` *(no installation required — portable app)*
+73. Click **Create new session**
+74. Fill in session details:
+    | Field | Value |
+    |-------|-------|
+    | Session name | `openstack` |
+    | IP or hostname | `192.168.66.3` |
+    | Port | `22` |
+    | Type | `SSHv2` |
+75. Under **CREDENTIALS**:
+    - Username: `user`
+    - Password: *(enter your VM password)*
+76. Click **Create**
+77. Click on the `openstack` session tile to connect
+78. Accept the security alert *(SSH host key fingerprint — click **Accept**)*
+79. ✅ You are now logged in via SSH!
+   
 
 ### Step 1: Check Current IP Address
 
@@ -117,26 +142,7 @@ user@openstack:~$ ping -c 2 192.168.66.2
 
 ---
 
-### Setup Instructions
 
-70. Download **Solar-PuTTY** from: [https://www.solarwinds.com/free-tools/solar-putty](https://www.solarwinds.com/free-tools/solar-putty)
-71. Extract the downloaded ZIP file to a folder (e.g., `C:\Tools\Solar-PuTTY`)
-72. Run `Solar-PuTTY.exe` *(no installation required — portable app)*
-73. Click **Create new session**
-74. Fill in session details:
-    | Field | Value |
-    |-------|-------|
-    | Session name | `openstack` |
-    | IP or hostname | `192.168.66.3` |
-    | Port | `22` |
-    | Type | `SSHv2` |
-75. Under **CREDENTIALS**:
-    - Username: `user`
-    - Password: *(enter your VM password)*
-76. Click **Create**
-77. Click on the `openstack` session tile to connect
-78. Accept the security alert *(SSH host key fingerprint — click **Accept**)*
-79. ✅ You are now logged in via SSH!
 
 ---
 
