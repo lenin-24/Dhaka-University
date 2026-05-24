@@ -160,34 +160,45 @@ kolla-genpwd
 nano /etc/kolla/globals.yml
 ```
 
-🔧 **Make the following changes** (uncomment by removing `#` and update values):
+## 📝 All Configuration Changes for `globals.yml`
 
-```yaml
-# ~Line 40: Set base OS to Ubuntu (not Rocky/CentOS)
-kolla_base_distro: "ubuntu"
+> 💡 **Tip**: In `nano`, press `Ctrl+_` (Control + Underscore) to jump directly to a line number. Enter the line number when prompted.
 
-# ~Line 59: Set Virtual IP to an unused IP in your subnet (NOT the VM IP)
-kolla_internal_vip_address: "192.168.66.4"
+---
 
-# ~Line 129: Set management network interface (has static IP)
-network_interface: "ens33"
+### 🔧 9 Critical Changes (with Line Numbers)
 
-# ~Line 158: Set external/provider network interface (NO IP assigned)
-neutron_external_interface: "ens37"
+| # | Line | Find (Original) | Change To (New Value) | Purpose |
+|---|------|-----------------|----------------------|---------|
+| 1 | ~53 | `#kolla_base_distro: "rocky"` | `kolla_base_distro: "ubuntu"` | ✅ Use Ubuntu as base OS for containers |
+| 2 | ~63 | `#kolla_internal_vip_address: "10.10.10.254"` | `kolla_internal_vip_address: "192.168.66.4"` | 🎯 Set VIP to unused IP in your subnet |
+| 3 | ~133 | `#network_interface: "eth0"` | `network_interface: "ens33"` | 🔗 Management network interface (static IP) |
+| 4 | ~162 | `#neutron_external_interface: "eth1"` | `neutron_external_interface: "ens34"` | 🌐 External/provider network (no IP) |
+| 5 | ~313 | `#enable_haproxy: true` | `enable_haproxy: "no"` | ⚙️ Disable HAProxy for all-in-one setup |
+| 6 | ~314 | `#enable_keepalived: ...` | `enable_keepalived: "{{ enable_haproxy \| bool }}"` | 🔁 Keepalived follows HAProxy setting |
+| 7 | ~396 | `enable_neutron_provider_networks: false` | `enable_neutron_provider_networks: "yes"` | 🚀 Enable floating IPs via provider networks |
+| 8 | ~417 | `#enable_proxysql: ...` | `enable_proxysql: "no"` | 🗄️ Disable ProxySQL to simplify deployment |
+| 9 | ~609 | `#nova_compute_virt_type: "kvm"` | `nova_compute_virt_type: "qemu"` | 🖥️ Use QEMU for nested virtualization in VMware |
 
-# ~Line 309-310: Disable HAProxy/Keepalived (not needed for all-in-one)
-enable_haproxy: "no"
-enable_keepalived: "{{ enable_haproxy | bool }}"
+> ⚠️ **Line numbers are approximate** — actual lines may vary slightly depending on Kolla-Ansible version. Use `Ctrl+_` and search for the key name if needed.
 
-# ~Line 392: Enable provider networks for floating IP support
-enable_neutron_provider_networks: "yes"
+---
 
-# ~Line 413: Disable ProxySQL (simplifies all-in-one deployment)
-enable_proxysql: "no"
+### 🛠️ Quick Edit Commands (Using `nano`)
 
-# ~Line 605: Use QEMU instead of KVM (required for nested virtualization in VMware)
-nova_compute_virt_type: "qemu"
+```bash
+# Open the configuration file
+nano /etc/kolla/globals.yml
+
+# Jump to line (example: line 53):
+# Press Ctrl+_ → type 53 → Enter
+
+# After editing, save and exit:
+# Ctrl+O → Enter (write out)
+# Ctrl+X (exit)
 ```
+
+---
 
 💾 **Save and exit**: `Ctrl+O` → `Enter` → `Ctrl+X`
 
