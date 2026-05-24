@@ -152,25 +152,7 @@ This message shows that your installation appears to be working correctly.
 | Hello-world test | `docker run hello-world` | Success message |
 | User permissions *(optional)* | `docker info` without `sudo` | Works if user added to `docker` group |
 
----
 
-### 🔐 Optional: Run Docker Without `sudo` (Recommended for Development)
-
-> ⚠️ **Security Note**: Adding a user to the `docker` group grants root-equivalent privileges. Only do this on trusted systems.
-
-```bash
-# Add your user to the docker group
-sudo usermod -aG docker $USER
-
-# Apply group changes (log out/in or run):
-newgrp docker
-
-# Verify: Run docker command without sudo
-docker run hello-world
-# ✅ Should work without 'sudo' prefix
-```
-
----
 
 ### 📋 Docker Installation Summary
 
