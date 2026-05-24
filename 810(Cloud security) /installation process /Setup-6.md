@@ -351,24 +351,7 @@ kolla-ansible destroy -i ./all-in-one --yes-i-really-really-mean-it
 
 ---
 
-### 🚀 What's Next?
 
-| Section | Purpose |
-|---------|---------|
-| 🔹 Create Networks | Configure provider/external networks for floating IPs |
-| 🔹 Launch VMs | Create Cirros test instance and verify networking |
-| 🔹 Integrate SDN | Connect Floodlight/ODL controllers to Neutron |
-| 🔹 Scale Out | Add compute nodes for multi-node deployment |
-
-> ⏭️ **Next: Configure OpenStack Networking**  
-> ```bash
-> # Create external provider network for floating IPs
-> openstack network create --share --external \
->   --provider-physical-network provider \
->   --provider-network-type flat public
-> ```
-
----
 
 ### 📚 Quick Reference: Kolla-Ansible Commands
 
