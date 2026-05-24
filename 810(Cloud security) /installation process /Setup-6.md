@@ -381,3 +381,10 @@ kolla-ansible destroy -i ./all-in-one --yes-i-really-really-mean-it
 | Restart service | `kolla-ansible restart --limit <service> -i ./all-in-one` |
 | View logs | `docker logs kolla_<service>_<hostname>` |
 | Source admin creds | `. /etc/kolla/admin-openrc.sh` |
+
+## Destroy and Redeploy (If Needed)
+# WARNING: This deletes ALL OpenStack containers and data
+kolla-ansible destroy --yes-i-really-really-mean-it -i ./all-in-one
+ 
+# After destroy, start from Step 10 (bootstrap) to redeploy
+
