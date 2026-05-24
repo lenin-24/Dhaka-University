@@ -22,7 +22,7 @@
     | Field | Value |
     |-------|-------|
     | VM Name | `openstack` |
-    | Location | Choose a folder with **60+ GB free space** |
+    | Location | Choose a folder with **40+ GB free space** |
     → Click **Next**
 28. **Processor Configuration**:
     - Number of processors: `2`
