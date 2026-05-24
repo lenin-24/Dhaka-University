@@ -22,7 +22,7 @@
     | Field | Value |
     |-------|-------|
     | VM Name | `openstack` |
-    | Location | Choose a folder with **40+ GB free space** |
+    | Location | Choose a folder with **60+ GB free space** |
     → Click **Next**
 28. **Processor Configuration**:
     - Number of processors: `2`
@@ -35,7 +35,7 @@
 32. **Disk Type**: Keep `SCSI (Recommended)` → Click **Next**
 33. **Select Disk**: Choose ✅ *Create a new virtual disk* → Click **Next**
 34. **Disk Capacity**:
-    - Size: `50.0 GB`
+    - Size: `40.0 GB+`
     - Select ✅ *Store virtual disk as a single file*
     → Click **Next**
 35. **Disk File**: Keep default `openstack.vmdk` → Click **Next**
