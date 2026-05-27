@@ -1,3 +1,5 @@
+```
+
 Specification	Detail
 Platform	VMware Workstation Pro 17
 Operating System	Ubuntu Server 24.04 LTS
@@ -9,3 +11,5 @@ VM Storage	50 GB virtual disk
 Network Type	NAT (VMnet8 - 192.168.66.0/24)
 Gateway IP	192.168.66.2
 OpenStack Dashboard IP	192.168.66.3 or 192.168.66.4
+
+```
