@@ -1,4 +1,34 @@
 
+```mermaid
+graph TD
+    %% Define styles for each phase
+    classDef phase1 fill:#154360,stroke:#154360,color:#ffffff,stroke-width:2px;
+    classDef phase2 fill:#1e8449,stroke:#1e8449,color:#ffffff,stroke-width:2px;
+    classDef phase3 fill:#7b241c,stroke:#7b241c,color:#ffffff,stroke-width:2px;
+    classDef phase4 fill:#2e4053,stroke:#2e4053,color:#ffffff,stroke-width:2px;
+    classDef phase5 fill:#784212,stroke:#784212,color:#ffffff,stroke-width:2px;
+    classDef phase6 fill:#212f3d,stroke:#212f3d,color:#ffffff,stroke-width:2px;
+    classDef footer fill:#f4f6f7,stroke:#bdc3c7,color:#2c3e50,stroke-width:2px,stroke-dasharray: 5 5;
+
+    %% Phase Nodes
+    P1(["<b>Phase 1 — Environment setup & baseline testing</b><br/>1. Write Mininet topology script (3-5 switches, 4-6 hosts)<br/>2. Connect controllers: Ryu → POX → Floodlight → OpenDaylight<br/>3. Run basic ping and iperf3 tests — confirm each controller works<br/>4. Record baseline: latency, throughput, packet loss per controller"]):::phase1
+
+    P2(["<b>Phase 2 — Dynamic network condition testing</b><br/>5. Simulate increasing load using iperf3 with stepped bandwidth (10 → 50 → 100 Mbps)<br/>6. Trigger link failures mid-test using Mininet's link down command<br/>7. Generate traffic bursts (CBR + Poisson model) using D-ITG or hping3<br/>8. Measure: flow setup time, recovery time, throughput degradation per controller"]):::phase2
+
+    P3(["<b>Phase 3 — Adversarial / attack scenario testing</b><br/>9. Simulate packet-in flooding: craft spoofed packets using Scapy to overwhelm controller<br/>10. Simulate DDoS traffic bursts: multiple hosts flood a target with hping3 or iperf3 UDP<br/>11. Generate malicious random flows to saturate flow tables<br/>12. Measure: CPU usage, control-plane latency, packet loss, throughput under each attack"]):::phase3
+
+    P4(["<b>Phase 4 — Build adaptive Ryu mechanism</b><br/>13. In Ryu app: add a packet-in rate counter with a sliding time window<br/>14. Implement threshold logic: if rate > T → rate-limit + deprioritize suspicious flows<br/>15. Add traffic classifier: distinguish legitimate vs anomalous flows by IP/port entropy<br/>16. Test modified Ryu in isolation — verify the mechanism triggers correctly"]):::phase4
+
+    P5(["<b>Phase 5 — Comparative evaluation</b><br/>17. Repeat Phase 2 and Phase 3 tests with adaptive Ryu — same topology, same traffic<br/>18. Compare default Ryu vs adaptive Ryu: latency, throughput, CPU, recovery time<br/>19. Compare all 4 controllers side-by-side across all dynamic and attack scenarios<br/>20. Use Wireshark / OpenFlow stats for detailed packet-level analysis"]):::phase5
+
+    P6(["<b>Phase 6 — Data collection, analysis & write-up</b><br/>21. Collect all metrics into CSV: per-controller, per-scenario (12+ experiment runs)<br/>22. Plot graphs: CDF of latency, throughput vs load, CPU under attack, recovery time bars<br/>23. Analyze trade-offs: scalability vs security vs performance per controller<br/>24. Write results, discussion, and conclusion sections"]):::phase6
+
+    %% Footer Node (Tools Used)
+    Footer(["<b>Tools & Technologies Used:</b><br/>Mininet — topology & traffic simulation | iperf3 / hping3 / Scapy / D-ITG — traffic generation & attack simulation<br/>tcpdump — packet capture & analysis | Python (Ryu app) — adaptive mechanism | matplotlib / pandas — analysis & plotting"]):::footer
+
+    %% Connect the phases
+    P1 ==> P2 ==> P3 ==> P4 ==> P5 ==> P6 ==> Footer
+```
 # SDN Controller Performance & Security Testing Methodology
 
 ## Overview
